@@ -1,0 +1,11 @@
+# Dependency directories
+node_modules
+dist
+
+# Angular cache
+.angular/cache
+
+# IDE files
+.idea
+.vscode
+.DS_Store
