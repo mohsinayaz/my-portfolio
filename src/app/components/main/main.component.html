@@ -1,0 +1,370 @@
+<!-- Header Section -->
+<header
+  class="w-full bg-gray-900 text-white py-4 fixed top-0 left-0 right-0 z-50"
+  [class.bg-gray-900]="!isDarkMode"
+  [class.bg-gray-100]="isDarkMode"
+>
+  <div class="container mx-auto flex justify-between items-center px-4">
+    <div class="flex items-center">
+        <img src="/logo.png" class="mr-2" />
+        <h1
+          class="text-4xl font-bold bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text"
+        >
+          Mohsin Ayaz
+        </h1>
+    </div>
+
+    <!-- Hamburger Menu for Mobile -->
+    <div class="lg:hidden flex items-center">
+      <button (click)="toggleMenu()" class="text-white text-2xl">
+        <i class="fas fa-bars"></i>
+        <!-- Hamburger Icon -->
+      </button>
+    </div>
+
+    <!-- Desktop Navigation -->
+    <nav class="hidden lg:flex">
+      <ul class="flex space-x-6">
+        <li>
+          <a
+            href="#main"
+            class="bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text hover:text-white"
+            >Home</a
+          >
+        </li>
+        <li>
+          <a
+            href="#about"
+            class="bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text hover:text-white"
+            >About</a
+          >
+        </li>
+        <li>
+          <a
+            href="#projects"
+            class="bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text hover:text-white"
+            >Projects</a
+          >
+        </li>
+        <li>
+          <a
+            href="#skills"
+            class="bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text hover:text-white"
+            >Skills</a
+          >
+        </li>
+        <li>
+          <a
+            href="#experience"
+            class="bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text hover:text-white"
+            >Experience</a
+          >
+        </li>
+        <li>
+          <a
+            href="#testimonials"
+            class="bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text hover:text-white"
+            >Testimonials</a
+          >
+        </li>
+        <li>
+          <a
+            href="#contact"
+            class="bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text hover:text-white"
+            >Contact</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Mobile Navigation (hidden by default) -->
+    <nav
+      *ngIf="isMenuOpen"
+      class="lg:hidden absolute top-0 left-0 right-0 bg-gray-900 text-white p-4 mt-12 z-50"
+    >
+      <ul class="flex flex-col items-center space-y-4">
+        <li><a href="#main" class="hover:text-indigo-500">Home</a></li>
+        <li><a href="#about" class="hover:text-indigo-500">About</a></li>
+        <li><a href="#projects" class="hover:text-indigo-500">Projects</a></li>
+        <li><a href="#skills" class="hover:text-indigo-500">Skills</a></li>
+        <li>
+          <a href="#experience" class="hover:text-indigo-500">Experience</a>
+        </li>
+        <li>
+          <a href="#testimonials" class="hover:text-indigo-500">Testimonials</a>
+        </li>
+        <li><a href="#contact" class="hover:text-indigo-500">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- Hero Section -->
+<section
+  id="main"
+  class="max-md:h-full h-screen w-full bg-gradient-to-r from-blue-500 to-purple-500 text-white flex flex-col items-center justify-center"
+>
+  <div
+    class="flex flex-col sm:flex-row items-center justify-center max-md:mt-32"
+  >
+    <div class="w-full sm:w-1/2 text-center">
+      <h1 class="text-4xl sm:text-6xl font-extrabold" data-aos="fade-up">
+        <b
+          class="text-black"
+          >S</b
+        >enior
+        <b
+          class="text-black"
+          >S</b
+        >oftware
+        <b
+          class="text-black"
+          >E</b
+        >ngineer
+      </h1>
+      <p class="mt-6 text-xl sm:text-2xl">
+        Hi, I'm Mohsin Ayaz. A passionate Senior Front-end Developer based in
+        Karachi, Pakistan.
+      </p>
+    </div>
+    <div class="ml-4 mt-6 sm:mt-0 text-center">
+      <img
+        src="/picture.png"
+        alt="my picture"
+        width="500"
+        height="500"
+        class="floating-image mt-6"
+      />
+    </div>
+  </div>
+  <div
+    class="flex max-md:items-start w-full items-center justify-center max-md:m-0 mt-6 text-xl sm:text-3xl max-md:px-2 max-md:py-6"
+  >
+    <span class="max-md:w-[35%] max-md:mt-2 text-2xl">Tech Stack |</span>
+    <div
+      class="flex flex-wrap justify-center max-md:gap-2 gap-4 sm:gap-6 max-md:m-0 mt-4 ml-4 sm:mt-0 max-md:w-[65%]"
+    >
+      <img src="/html.png" title="HTML" class="cursor-pointer" />
+      <img src="/css.png" title="CSS" class="cursor-pointer" />
+      <img src="/js.png" title="JavaScript" class="cursor-pointer" />
+      <img src="/angular.png" title="Angular" class="cursor-pointer" />
+      <img src="/bootstrap.png" title="Bootstrap" class="cursor-pointer" />
+      <img src="/material-ui.png" title="Material-UI" class="cursor-pointer" />
+      <img src="/ts.png" title="TypeScript" class="cursor-pointer" />
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="p-10 bg-gray-50 text-gray-800">
+  <h2 class="text-4xl font-bold text-center mb-6" data-aos="fade-down">
+    About Me
+  </h2>
+  <p class="text-lg text-center" data-aos="fade-down" data-aos-delay="200">
+    I am a passionate software engineer with experience in building modern,
+    responsive, and dynamic web applications using Angular and Tailwind CSS.
+  </p>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="p-10 bg-gray-900 text-white">
+  <h2 class="text-4xl font-bold text-center mb-6" data-aos="fade-right">
+    My Projects
+  </h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="p-6 bg-indigo-700 rounded-lg shadow-lg" data-aos="zoom-in">
+      <h3 class="text-2xl font-semibold">Project 1</h3>
+      <p class="mt-2">
+        A modern web application built with Angular and Tailwind CSS.
+      </p>
+    </div>
+    <div
+      class="p-6 bg-blue-700 rounded-lg shadow-lg"
+      data-aos="zoom-in"
+      data-aos-delay="200"
+    >
+      <h3 class="text-2xl font-semibold">Project 2</h3>
+      <p class="mt-2">
+        An e-commerce platform featuring dynamic components and animations.
+      </p>
+    </div>
+    <div
+      class="p-6 bg-purple-700 rounded-lg shadow-lg"
+      data-aos="zoom-in"
+      data-aos-delay="400"
+    >
+      <h3 class="text-2xl font-semibold">Project 3</h3>
+      <p class="mt-2">
+        A responsive portfolio showcasing my skills in frontend development.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills" class="p-10 bg-gray-50 text-gray-800">
+  <h2 class="text-4xl font-bold text-center mb-8" data-aos="fade-down">
+    Skills
+  </h2>
+  <p class="text-xl text-center mb-8" data-aos="fade-down" data-aos-delay="200">
+    Here are the technologies and tools I specialize in:
+  </p>
+  <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 text-center">
+    <!-- Skill 1 -->
+    <div
+      class="bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition-all"
+    >
+      <img src="/angular.png" alt="Angular" class="mx-auto h-16 w-16 mb-4" />
+      <p class="font-semibold text-lg">Angular</p>
+    </div>
+    <!-- Skill 2 -->
+    <div
+      class="bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition-all"
+    >
+      <img src="/react.png" alt="React" class="mx-auto h-16 w-16 mb-4" />
+      <p class="font-semibold text-lg">React</p>
+    </div>
+    <!-- Skill 3 -->
+    <div
+      class="bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition-all"
+    >
+      <img src="/vue.png" alt="Vue.js" class="mx-auto h-16 w-16 mb-4" />
+      <p class="font-semibold text-lg">Vue.js</p>
+    </div>
+    <!-- Skill 4 -->
+    <div
+      class="bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition-all"
+    >
+      <img
+        src="/tailwind.png"
+        alt="Tailwind CSS"
+        class="mx-auto h-16 w-16 mb-4"
+      />
+      <p class="font-semibold text-lg">Tailwind</p>
+    </div>
+    <!-- Skill 5 -->
+    <div
+      class="bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition-all"
+    >
+      <img src="/ts.png" alt="TypeScript" class="mx-auto h-16 w-16 mb-4" />
+      <p class="font-semibold text-lg">TypeScript</p>
+    </div>
+    <!-- Skill 6 -->
+    <div
+      class="bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition-all"
+    >
+      <img src="/js.png" alt="JavaScript" class="mx-auto h-16 w-16 mb-4" />
+      <p class="font-semibold text-lg">JavaScript</p>
+    </div>
+    <!-- Skill 7 -->
+    <div
+      class="bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition-all"
+    >
+      <img src="/html.png" alt="HTML" class="mx-auto h-16 w-16 mb-4" />
+      <p class="font-semibold text-lg">HTML</p>
+    </div>
+    <!-- Skill 8 -->
+    <div
+      class="bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition-all"
+    >
+      <img src="/css.png" alt="CSS" class="mx-auto h-16 w-16 mb-4" />
+      <p class="font-semibold text-lg">CSS</p>
+    </div>
+  </div>
+</section>
+
+<!-- Experience Section -->
+<section id="experience" class="p-10 bg-gray-900 text-white">
+  <h2 class="text-4xl font-bold text-center mb-6" data-aos="fade-up">
+    Experience
+  </h2>
+  <div class="text-center text-lg">
+    <p data-aos="fade-up" data-aos-delay="200">
+      I have 5+ years of experience in frontend development, working with
+      Angular, React, and Vue.js to build responsive and scalable web
+      applications.
+    </p>
+    <p data-aos="fade-up" data-aos-delay="400">
+      I have contributed to various projects, improving the user experience and
+      enhancing the functionality of websites and applications.
+    </p>
+  </div>
+</section>
+
+<!-- Testimonials Section -->
+<section id="testimonials" class="p-10 bg-gray-50 text-gray-800">
+  <h2 class="text-4xl font-bold text-center mb-6" data-aos="fade-up">
+    Testimonials
+  </h2>
+  <div class="flex flex-wrap justify-center gap-8">
+    <div
+      class="p-6 bg-indigo-700 text-white rounded-lg shadow-lg"
+      data-aos="zoom-in"
+    >
+      <p>
+        "Mohsin is an excellent developer. His expertise in Angular is
+        unparalleled!"
+      </p>
+      <p class="mt-4 font-semibold">- John Doe</p>
+    </div>
+    <div
+      class="p-6 bg-blue-700 text-white rounded-lg shadow-lg"
+      data-aos="zoom-in"
+      data-aos-delay="200"
+    >
+      <p>
+        "Working with Mohsin was a pleasure. His attention to detail and
+        problem-solving skills are top-notch!"
+      </p>
+      <p class="mt-4 font-semibold">- Jane Smith</p>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="p-10 bg-gray-900 text-white">
+  <h2 class="text-4xl font-bold text-center mb-6" data-aos="fade-up">
+    Contact
+  </h2>
+  <div class="text-center text-lg">
+    <p>
+      If you'd like to get in touch, feel free to reach out via email or connect
+      with me on LinkedIn.
+    </p>
+  </div>
+</section>
+
+<!-- Footer Section -->
+<footer class="bg-gray-900 text-white py-6">
+  <div class="container mx-auto text-center">
+    <p>&copy; 2025 Mohsin Ayaz. All Rights Reserved.</p>
+    <div class="mt-4">
+      <a
+        href="https://github.com/mohsinayaz"
+        target="_blank"
+        class="text-indigo-400 hover:text-indigo-500 mx-2"
+        >GitHub</a
+      >
+      <a
+        href="https://www.linkedin.com/in/mohsinayaz/"
+        target="_blank"
+        class="text-indigo-400 hover:text-indigo-500 mx-2"
+        >LinkedIn</a
+      >
+      <a
+        href="mailto:mohxn.ayaaz@gmail.com"
+        class="text-indigo-400 hover:text-indigo-500 mx-2"
+        >Email</a
+      >
+    </div>
+  </div>
+</footer>
+
+<!-- Move to Top Button -->
+<button
+  *ngIf="showScrollButton"
+  (click)="scrollToTop()"
+  class="fixed bottom-5 right-5 bg-indigo-500 text-2xl text-white w-[40px] h-[40px] rounded-full shadow-lg hover:bg-indigo-600 transition-all"
+>
+  ↑
+</button>

@@ -1,0 +1,23 @@
+.floating-image {
+    padding: 4px;
+    transform: translateY(0);
+    animation: float 6s ease-in-out infinite;
+    width: 300px; /* Adjust width as needed */
+    height: 300px; /* Adjust height as needed */
+    object-fit: cover; /* Ensure the image is properly contained */
+    background-color: #fff;
+    border-radius: 50%;
+  }
+  
+  @keyframes float {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-15px); /* Adjust the floating distance */
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
