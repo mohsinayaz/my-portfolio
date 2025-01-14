@@ -21,6 +21,12 @@ export class MainComponent {
     this.setTheme(); // Apply the theme when the component initializes
   }
 
+  downloadResume() {
+    const resumeUrl = '/resume.pdf';
+    window.open(resumeUrl, '_blank');
+  }
+
+
   @HostListener('window:scroll', [])
   onWindowScroll() {
     if (window.scrollY > 300) {
