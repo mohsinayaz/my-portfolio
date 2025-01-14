@@ -22,7 +22,7 @@ export class MainComponent {
   }
 
   downloadResume() {
-    const resumeUrl = 'assets/resume.pdf';
+    const resumeUrl = '/MohsinAyazResume.pdf';
     window.open(resumeUrl, '_blank');
   }
 
