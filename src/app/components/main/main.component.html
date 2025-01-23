@@ -1,6 +1,6 @@
 <!-- Header Section -->
 <header
-  class="w-full bg-gray-900 text-white py-4 fixed top-0 left-0 right-0 z-50"
+  class="w-full bg-gray-900 text-white py-5 fixed top-0 left-0 right-0 z-50"
   [class.bg-gray-900]="!isDarkMode"
   [class.bg-gray-100]="isDarkMode"
 >
@@ -28,49 +28,42 @@
         <li>
           <a
             href="#main"
-            class="bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text hover:text-white"
             >Home</a
           >
         </li>
         <li>
           <a
             href="#about"
-            class="bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text hover:text-white"
             >About</a
           >
         </li>
         <li>
           <a
             href="#projects"
-            class="bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text hover:text-white"
             >Projects</a
           >
         </li>
         <li>
           <a
             href="#skills"
-            class="bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text hover:text-white"
             >Skills</a
           >
         </li>
         <li>
           <a
             href="#experience"
-            class="bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text hover:text-white"
             >Experience</a
           >
         </li>
         <li>
           <a
             href="#testimonials"
-            class="bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text hover:text-white"
             >Testimonials</a
           >
         </li>
         <li>
           <a
             href="#contact"
-            class="bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text hover:text-white"
             >Contact</a
           >
         </li>
@@ -80,7 +73,7 @@
     <!-- Mobile Navigation (hidden by default) -->
     <nav
       *ngIf="isMenuOpen"
-      class="lg:hidden absolute top-0 left-0 right-0 bg-gray-900 text-white p-4 mt-12 z-50"
+      class="lg:hidden absolute top-9 left-0 right-0 bg-gray-900 text-white p-4 mt-12 z-50"
     >
       <ul class="flex flex-col items-center space-y-4">
         <li><a href="#main" class="hover:text-indigo-500">Home</a></li>
@@ -121,8 +114,6 @@
       <img
         src="/picture.png"
         alt="my picture"
-        width="500"
-        height="500"
         class="floating-image mt-6"
       />
     </div>
@@ -158,15 +149,15 @@
 <!-- About Section -->
 <section
   id="about"
-  class="p-10 bg-gradient-to-r from-blue-500 via-indigo-600 to-purple-600 text-white"
+  class="p-10  text-black"
 >
   <div
-    class="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-center"
+    class="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-center"  data-aos="fade-right"
   >
     <!-- Profile Image -->
     <div class="flex justify-center" data-aos="fade-right">
       <div
-        class="relative rounded-full p-2 bg-gradient-to-r from-indigo-500 via-blue-600 to-purple-600"
+        class="rounded-full p-2 bg-gradient-to-r from-indigo-500 via-blue-600 to-purple-600"
       >
         <img
           src="/laptop.jpeg"
@@ -176,30 +167,28 @@
       </div>
     </div>
     <!-- About Content -->
-    <div class="flex flex-col items-center">
-      <h2 class="text-5xl font-extrabold mb-4" data-aos="fade-left">
+    <div class="flex flex-col items-center"  data-aos="fade-left" data-aos-delay="200">
+      <h2 class="text-5xl font-extrabold mb-4">
         About Me
       </h2>
-      <p
-        class="text-lg leading-relaxed mb-6 text-justify"
-        data-aos="fade-left"
-        data-aos-delay="200"
-      >
-        I am a passionate Frontend Developer with expertise in crafting modern,
-        dynamic, and responsive web applications. With a strong foundation in
-        Angular, React, and Vue.js, I specialize in building user-friendly
-        interfaces that deliver exceptional user experiences.
-      </p>
-      <p
-        class="text-lg leading-relaxed mb-6 text-justify"
-        data-aos="fade-left"
-        data-aos-delay="200"
-      >
-        My toolkit includes TypeScript, JavaScript, Tailwind CSS, and other
-        cutting-edge technologies, enabling me to bring designs to life with
-        precision and style. I take pride in creating clean, efficient, and
-        maintainable code.
-      </p>
+      <div>
+          <p
+            class="text-lg leading-relaxed mb-6 text-justify"        
+          >
+            I am a passionate Frontend Developer with expertise in crafting modern,
+            dynamic, and responsive web applications. With a strong foundation in
+            Angular, React, and Vue.js, I specialize in building user-friendly
+            interfaces that deliver exceptional user experiences.
+          </p>
+          <p
+            class="text-lg leading-relaxed mb-6 text-justify"
+          >
+            My toolkit includes TypeScript, JavaScript, Tailwind CSS, and other
+            cutting-edge technologies, enabling me to bring designs to life with
+            precision and style. I take pride in creating clean, efficient, and
+            maintainable code.
+          </p>
+      </div>
     </div>
   </div>
 </section>
@@ -211,30 +200,74 @@
   </h2>
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
     <div class="p-6 bg-indigo-700 rounded-lg shadow-lg" data-aos="zoom-in">
-      <h3 class="text-2xl font-semibold">Project 1</h3>
-      <p class="mt-2">
-        A modern web application built with Angular and Tailwind CSS.
-      </p>
+      <img src="/Icplan.png" width="500" height="500" />
+      <div class="mt-4">
+        <h2 class="text-2xl font-semibold">ICPlan</h2>
+        <p class="mt-2 text-sm">
+          ● Facilitated communication planning for teams through streamlined
+          activity plotting and real-time updates.
+        </p>
+        <p class="mt-2 text-sm">
+          ● Designed templates, protected file storage, and robust communication
+          features for enhanced collaboration
+        </p>
+      </div>
     </div>
     <div
       class="p-6 bg-blue-700 rounded-lg shadow-lg"
       data-aos="zoom-in"
       data-aos-delay="200"
     >
-      <h3 class="text-2xl font-semibold">Project 2</h3>
-      <p class="mt-2">
-        An e-commerce platform featuring dynamic components and animations.
-      </p>
+      <img src="/vueQ&A.png" width="500" height="500" />
+      <div class="mt-4">
+        <h2 class="text-2xl font-semibold">Vue Q&A App</h2>
+        <p class="mt-2 text-sm">
+          ● Developed a Vue 3 application integrated with Firebase, featuring dynamic five-question
+          navigation leading to category and product pages.       
+        </p>
+        <p class="mt-2 text-sm">
+          ● Implemented real-time data fetching for an engaging user experience.
+        </p>
+      </div>
     </div>
     <div
       class="p-6 bg-purple-700 rounded-lg shadow-lg"
       data-aos="zoom-in"
       data-aos-delay="400"
     >
-      <h3 class="text-2xl font-semibold">Project 3</h3>
-      <p class="mt-2">
-        A responsive portfolio showcasing my skills in frontend development.
-      </p>
+      <img src="/prime-event.png" width="500" height="500" />
+      <div class="mt-4">
+        <h2 class="text-2xl font-semibold">Prime Event Personnel</h2>
+        <p class="mt-2 text-sm">
+          ● Built a web platform for event industries to manage job postings and applications.
+        </p>
+        <p class="mt-2 text-sm">
+          ● Designed features for businesses to post jobs, track proposals, and for workers to apply and
+          monitor status.
+        </p>
+        <p class="mt-2 text-sm">
+          ● Utilized React, Tailwind CSS, Formik, Yup, and Firebase for robust data management and user
+          authentication.       
+        </p>
+      </div>
+    </div>
+    <div
+      class="p-6 bg-indigo-700 rounded-lg shadow-lg"
+      data-aos="zoom-in"
+    >
+      <img src="/create-notes.png" width="500" height="500" />
+      <div class="mt-4">
+        <h2 class="text-2xl font-semibold">Create Notes</h2>
+        <p class="mt-2 text-sm">
+          ● Developed a React-based sticky notes web application enabling users to create, edit, and delete notes with an intuitive interface.      
+        </p>
+        <p class="mt-2 text-sm">
+          ● Implemented dynamic state management for real-time updates and seamless user interactions.
+        </p>
+        <p class="mt-2 text-sm">
+          ● Enhanced user experience by integrating features like persistent data storage and responsive design.
+        </p>
+      </div>
     </div>
   </div>
 </section>
@@ -244,7 +277,7 @@
   <h2 class="text-4xl font-bold text-center mb-8" data-aos="fade-down">
     Skills
   </h2>
-  <p class="text-xl text-center mb-8" data-aos="fade-down" data-aos-delay="200">
+  <p class="text-xl text-center mb-8" data-aos="fade-down">
     Here are the technologies and tools I specialize in:
   </p>
   <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 text-center">
@@ -331,7 +364,7 @@
 
 <!-- Testimonials Section -->
 <section id="testimonials" class="p-10 bg-gray-50 text-gray-800">
-  <h2 class="text-4xl font-bold text-center mb-6" data-aos="fade-up">
+  <h2 class="text-4xl font-bold text-center mb-6" data-aos="fade-down">
     Testimonials
   </h2>
   <div class="flex flex-wrap justify-center gap-8">
@@ -348,7 +381,6 @@
     <div
       class="p-6 bg-blue-700 text-white rounded-lg shadow-lg"
       data-aos="zoom-in"
-      data-aos-delay="200"
     >
       <p>
         "Working with Mohsin was a pleasure. His attention to detail and
@@ -402,7 +434,7 @@
 <button
   *ngIf="showScrollButton"
   (click)="scrollToTop()"
-  class="fixed bottom-5 right-5 bg-indigo-500 text-2xl text-white w-[40px] h-[40px] rounded-full shadow-lg hover:bg-indigo-600 transition-all"
+  class="fixed  bottom-5 right-5 bg-indigo-500 text-2xl text-white w-[40px] h-[40px] rounded-full shadow-lg hover:bg-indigo-600 transition-all"
 >
   ↑
 </button>
