@@ -28,41 +28,41 @@
         <li>
           <a
             href="#main"
+            class="bg-gradient-to-r from-blue-500 to-purple-500 hover:text-transparent bg-clip-text"
             >Home</a
           >
         </li>
         <li>
           <a
+           class="bg-gradient-to-r from-blue-500 to-purple-500 hover:text-transparent bg-clip-text"
             href="#about"
             >About</a
           >
         </li>
         <li>
           <a
+           class="bg-gradient-to-r from-blue-500 to-purple-500 hover:text-transparent bg-clip-text"
             href="#projects"
             >Projects</a
           >
         </li>
         <li>
           <a
+           class="bg-gradient-to-r from-blue-500 to-purple-500 hover:text-transparent bg-clip-text"
             href="#skills"
             >Skills</a
           >
         </li>
         <li>
           <a
+           class="bg-gradient-to-r from-blue-500 to-purple-500 hover:text-transparent bg-clip-text"
             href="#experience"
             >Experience</a
           >
         </li>
         <li>
           <a
-            href="#testimonials"
-            >Testimonials</a
-          >
-        </li>
-        <li>
-          <a
+           class="bg-gradient-to-r from-blue-500 to-purple-500 hover:text-transparent bg-clip-text"
             href="#contact"
             >Contact</a
           >
@@ -114,7 +114,9 @@
       <img
         src="/picture.png"
         alt="my picture"
-        class="floating-image mt-6"
+        class="floating-image mt-6 bg-white rounded-full"
+        width="300"
+        height="300"
       />
     </div>
   </div>
@@ -155,14 +157,16 @@
     class="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-center"  data-aos="fade-right"
   >
     <!-- Profile Image -->
-    <div class="flex justify-center" data-aos="fade-right">
+    <div class="flex justify-end" data-aos="fade-right">
       <div
-        class="rounded-full p-2 bg-gradient-to-r from-indigo-500 via-blue-600 to-purple-600"
+        class="rounded-lg"
       >
         <img
           src="/laptop.jpeg"
           alt="Profile Picture"
-          class="rounded-full opacity-[0.7]"
+          class="rounded-3xl floating-image"
+          width="700"
+          height="700"
         />
       </div>
     </div>
@@ -173,7 +177,7 @@
       </h2>
       <div>
           <p
-            class="text-lg leading-relaxed mb-6 text-justify"        
+            class="text-lg mb-6"        
           >
             I am a passionate Frontend Developer with expertise in crafting modern,
             dynamic, and responsive web applications. With a strong foundation in
@@ -181,7 +185,7 @@
             interfaces that deliver exceptional user experiences.
           </p>
           <p
-            class="text-lg leading-relaxed mb-6 text-justify"
+            class="text-lg mb-6"
           >
             My toolkit includes TypeScript, JavaScript, Tailwind CSS, and other
             cutting-edge technologies, enabling me to bring designs to life with
@@ -199,7 +203,7 @@
     My Projects
   </h2>
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-    <div class="p-6 bg-indigo-700 rounded-lg shadow-lg" data-aos="zoom-in">
+    <div class="p-6 bg-indigo-700 rounded-lg shadow-lg flex flex-col" data-aos="zoom-in">
       <img src="/Icplan.png" width="500" height="500" />
       <div class="mt-4">
         <h2 class="text-2xl font-semibold">ICPlan</h2>
@@ -212,9 +216,15 @@
           features for enhanced collaboration
         </p>
       </div>
+      <div class="flex flex-1 items-end justify-center mt-6">
+        <a href="https://www.icplan.com/" target="_blank" class="flex cursor-pointer bg-gradient-to-r from-blue-500 to-purple-500 hover:text-transparent bg-clip-text">
+          <p class="mr-2 text-lg font-bold  ">Live Demo</p>
+          <img src="/live-demo.png" width="24" height="24" />
+        </a>
+      </div>
     </div>
     <div
-      class="p-6 bg-blue-700 rounded-lg shadow-lg"
+      class="p-6 bg-blue-700 rounded-lg shadow-lg flex flex-col"
       data-aos="zoom-in"
       data-aos-delay="200"
     >
@@ -229,9 +239,15 @@
           ● Implemented real-time data fetching for an engaging user experience.
         </p>
       </div>
+      <div class="flex flex-1 justify-center items-end mt-6">
+        <a href="https://vue-app-questions-and-answers.web.app/" target="_blank" class="flex cursor-pointer bg-gradient-to-r from-blue-500 to-purple-500 hover:text-transparent bg-clip-text">
+          <p class="mr-2 text-lg font-bold">Live Demo</p>
+          <img src="/live-demo.png" width="24" height="24" />
+        </a>
+      </div>
     </div>
     <div
-      class="p-6 bg-purple-700 rounded-lg shadow-lg"
+      class="p-6 bg-purple-700 rounded-lg shadow-lg flex flex-col"
       data-aos="zoom-in"
       data-aos-delay="400"
     >
@@ -250,9 +266,15 @@
           authentication.       
         </p>
       </div>
+      <div class="flex flex-1 justify-center items-end mt-6">
+        <a href="https://prime-event-personnel.web.app/" target="_blank" class="flex cursor-pointer bg-gradient-to-r from-blue-500 to-purple-500 hover:text-transparent bg-clip-text">
+          <p class="mr-2 text-lg font-bold">Live Demo</p>
+          <img src="/live-demo.png" width="24" height="24" />
+        </a>
+      </div>
     </div>
     <div
-      class="p-6 bg-indigo-700 rounded-lg shadow-lg"
+      class="p-6 bg-indigo-700 rounded-lg shadow-lg flex flex-col"
       data-aos="zoom-in"
     >
       <img src="/create-notes.png" width="500" height="500" />
@@ -267,6 +289,34 @@
         <p class="mt-2 text-sm">
           ● Enhanced user experience by integrating features like persistent data storage and responsive design.
         </p>
+      </div>
+      <div class="flex flex-1 justify-center items-end mt-6">
+        <a href="https://mohsinayaz.github.io/create-notes" target="_blank" class="flex cursor-pointer bg-gradient-to-r from-blue-500 to-purple-500 hover:text-transparent bg-clip-text">
+          <p class="mr-2 text-lg font-bold">Live Demo</p>
+          <img src="/live-demo.png" width="24" height="24" />
+        </a>
+      </div>
+    </div>
+    <div
+      class="p-6 bg-blue-700 rounded-lg shadow-lg flex flex-col"
+      data-aos="zoom-in"
+      data-aos-delay="200"
+    >
+      <img src="/groves.png" width="500" height="500" />
+      <div class="mt-4">
+        <h2 class="text-2xl font-semibold">Groves Restaurant</h2>
+        <p class="mt-2 text-sm">
+          ● Developed a full-stack restaurant management app with Angular 19 and Tailwind CSS, ensuring full mobile responsiveness for a seamless experience on all devices.      
+        </p>
+        <p class="mt-2 text-sm">
+          ● Features include menu management, order tracking, and customer feedback system.
+        </p>
+      </div>
+      <div class="flex flex-1 justify-center items-end mt-6">
+        <a href="https://groves-restaurant.netlify.app/" target="_blank" class="flex cursor-pointer bg-gradient-to-r from-blue-500 to-purple-500 hover:text-transparent bg-clip-text">
+          <p class="mr-2 text-lg font-bold">Live Demo</p>
+          <img src="/live-demo.png" width="24" height="24" />
+        </a>
       </div>
     </div>
   </div>
@@ -347,49 +397,59 @@
 <!-- Experience Section -->
 <section id="experience" class="p-10 bg-gray-900 text-white">
   <h2 class="text-4xl font-bold text-center mb-6" data-aos="fade-up">
-    Experience
+    Professional Experience
   </h2>
-  <div class="text-center text-lg">
-    <p data-aos="fade-up" data-aos-delay="200">
-      I have 5+ years of experience in frontend development, working with
-      Angular, React, and Vue.js to build responsive and scalable web
-      applications.
-    </p>
-    <p data-aos="fade-up" data-aos-delay="400">
-      I have contributed to various projects, improving the user experience and
-      enhancing the functionality of websites and applications.
-    </p>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <!-- Experience 1 -->
+    <div class="p-6 bg-gray-800 rounded-lg shadow-lg" data-aos="fade-right">
+      <h3 class="text-2xl font-semibold">Senior Software Engineer - Angular</h3>
+      <p class="mt-2 text-sm text-gray-400">Cluster Valley | Nov 2021 - Present</p>
+      <ul class="list-disc mt-4 pl-5 space-y-2 text-sm">
+        <li>Led a team of two junior Angular developers, providing mentorship and ensuring project milestones were met.</li>
+        <li>Designed and developed scalable frontend applications using Angular, ensuring responsive and user-friendly interfaces.</li>
+        <li>Collaborated with cross-functional teams to deliver projects on time and within scope.</li>
+        <li>Implemented coding best practices, conducted code reviews, and optimized application performance.</li>
+        <li>Participated in Agile ceremonies, including sprint planning and daily stand-ups.</li>
+        <li>Integrated frontend applications with RESTful APIs and backend services.</li>
+      </ul>
+    </div>
+
+    <!-- Experience 2 -->
+    <div class="p-6 bg-gray-800 rounded-lg shadow-lg" data-aos="fade-right" data-aos-delay="200">
+      <h3 class="text-2xl font-semibold">Associate Software Engineer</h3>
+      <p class="mt-2 text-sm text-gray-400">Iomechs | 2019 - 2021</p>
+      <ul class="list-disc mt-4 pl-5 space-y-2 text-sm">
+        <li>Developed frontend components and features for large-scale applications using Angular.</li>
+        <li>Collaborated with UX/UI designers and backend developers to deliver integrated solutions.</li>
+        <li>Implemented responsive design principles to ensure mobile-friendly and accessible applications.</li>
+        <li>Resolved technical issues and optimized performance through debugging and efficient coding practices.</li>
+        <li>Worked with React.js on certain projects, showcasing flexibility in frontend technologies.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Additional Experiences -->
+  <div class="mt-8">
+    <h3 class="text-2xl font-bold text-center">Open Source Contributions</h3>
+    <div class="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="p-4 bg-gray-800 rounded-lg shadow-md">
+        <h4 class="text-xl font-semibold">Ng Chat List</h4>
+        <p class="mt-2 text-sm text-gray-400">Contributed to a chat-based Angular application.</p>
+      </div>
+
+      <div class="p-4 bg-gray-800 rounded-lg shadow-md">
+        <h4 class="text-xl font-semibold">ngx-device-detector</h4>
+        <p class="mt-2 text-sm text-gray-400">Contributed to an Angular library recognized by Google Developer Experts.</p>
+      </div>
+
+      <div class="p-4 bg-gray-800 rounded-lg shadow-md">
+        <h4 class="text-xl font-semibold">Angular Year Calendar</h4>
+        <p class="mt-2 text-sm text-gray-400">Contributed to an Angular Year Calendar library depends on "date-fns" and "angular/cdk"</p>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- Testimonials Section -->
-<section id="testimonials" class="p-10 bg-gray-50 text-gray-800">
-  <h2 class="text-4xl font-bold text-center mb-6" data-aos="fade-down">
-    Testimonials
-  </h2>
-  <div class="flex flex-wrap justify-center gap-8">
-    <div
-      class="p-6 bg-indigo-700 text-white rounded-lg shadow-lg"
-      data-aos="zoom-in"
-    >
-      <p>
-        "Mohsin is an excellent developer. His expertise in Angular is
-        unparalleled!"
-      </p>
-      <p class="mt-4 font-semibold">- John Doe</p>
-    </div>
-    <div
-      class="p-6 bg-blue-700 text-white rounded-lg shadow-lg"
-      data-aos="zoom-in"
-    >
-      <p>
-        "Working with Mohsin was a pleasure. His attention to detail and
-        problem-solving skills are top-notch!"
-      </p>
-      <p class="mt-4 font-semibold">- Jane Smith</p>
-    </div>
-  </div>
-</section>
 
 <!-- Contact Section -->
 <section id="contact" class="p-10 bg-gray-900 text-white">
