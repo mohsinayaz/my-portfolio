@@ -18,15 +18,16 @@ export class MainComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
+    AOS.init({
+      duration: 1000,  // Animation duration
+      once: true,       // Run animation only once
+    });
     this.isDarkMode = localStorage.getItem('theme') === 'dark';
     this.setTheme(); // Apply the theme when the component initializes
   }
 
   ngAfterViewInit() {
-    AOS.init({
-      duration: 1000,  // Animation duration
-      once: true,       // Run animation only once
-    });
+    
   }
 
   downloadResume() {
