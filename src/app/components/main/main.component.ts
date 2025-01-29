@@ -45,6 +45,24 @@ export class MainComponent {
     localStorage.setItem('theme', this.isDarkMode ? 'dark' : 'light');
     this.setTheme();
   }
+  
+  scrollToSection(event: Event, sectionId: string, mobileViewSidebar = false) {
+    event.preventDefault(); // Prevent default anchor behavior
+    const section = document.getElementById(sectionId);
+    if (section) {
+      const headerOffset = 80; // Adjust based on your header height
+      const elementPosition = section.getBoundingClientRect().top + window.scrollY;
+      const offsetPosition = elementPosition - headerOffset;
+  
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth',
+      });
+    }
+     if(mobileViewSidebar) {
+      this.toggleMenu();
+     }
+  }
 
   setTheme() {
     if (this.isDarkMode) {

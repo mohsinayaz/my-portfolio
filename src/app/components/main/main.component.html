@@ -5,7 +5,7 @@
   [class.bg-gray-100]="isDarkMode"
 >
   <div class="container mx-auto flex justify-between items-center px-4">
-    <div class="flex items-center">
+    <div class="flex items-center cursor-pointer" (click)="scrollToSection($event, 'main')">
       <img src="/logo.png" width="43" height="43" class="mr-4 mb-2" />
       <h1
         class="text-4xl font-bold bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text"
@@ -27,8 +27,9 @@
       <ul class="flex space-x-6">
         <li>
           <a
-            href="#main"
-            class="bg-gradient-to-r from-blue-500 to-purple-500 hover:text-transparent bg-clip-text"
+          class="bg-gradient-to-r from-blue-500 to-purple-500 hover:text-transparent bg-clip-text"
+          href="#main"
+          (click)="scrollToSection($event, 'main')"
             >Home</a
           >
         </li>
@@ -36,6 +37,7 @@
           <a
            class="bg-gradient-to-r from-blue-500 to-purple-500 hover:text-transparent bg-clip-text"
             href="#about"
+            (click)="scrollToSection($event, 'about')"
             >About</a
           >
         </li>
@@ -43,6 +45,7 @@
           <a
            class="bg-gradient-to-r from-blue-500 to-purple-500 hover:text-transparent bg-clip-text"
             href="#projects"
+            (click)="scrollToSection($event, 'projects')"
             >Projects</a
           >
         </li>
@@ -50,6 +53,7 @@
           <a
            class="bg-gradient-to-r from-blue-500 to-purple-500 hover:text-transparent bg-clip-text"
             href="#skills"
+            (click)="scrollToSection($event, 'skills')"
             >Skills</a
           >
         </li>
@@ -57,13 +61,23 @@
           <a
            class="bg-gradient-to-r from-blue-500 to-purple-500 hover:text-transparent bg-clip-text"
             href="#experience"
+            (click)="scrollToSection($event, 'experience')"
             >Experience</a
           >
         </li>
         <li>
           <a
            class="bg-gradient-to-r from-blue-500 to-purple-500 hover:text-transparent bg-clip-text"
+            href="#open-source"
+            (click)="scrollToSection($event, 'open-source')"
+            >Open Source</a
+          >
+        </li>
+        <li>
+          <a
+           class="bg-gradient-to-r from-blue-500 to-purple-500 hover:text-transparent bg-clip-text"
             href="#contact"
+            (click)="scrollToSection($event, 'contact')"
             >Contact</a
           >
         </li>
@@ -76,17 +90,17 @@
       class="lg:hidden absolute top-9 left-0 right-0 bg-gray-900 text-white p-4 mt-12 z-50"
     >
       <ul class="flex flex-col items-center space-y-4">
-        <li><a href="#main" class="hover:text-indigo-500">Home</a></li>
-        <li><a href="#about" class="hover:text-indigo-500">About</a></li>
-        <li><a href="#projects" class="hover:text-indigo-500">Projects</a></li>
-        <li><a href="#skills" class="hover:text-indigo-500">Skills</a></li>
+        <li><a href="#main" class="hover:text-indigo-500" (click)="scrollToSection($event, 'main', true)">Home</a></li>
+        <li><a href="#about" class="hover:text-indigo-500" (click)="scrollToSection($event, 'about', true)">About</a></li>
+        <li><a href="#projects" class="hover:text-indigo-500" (click)="scrollToSection($event, 'projects', true)">Projects</a></li>
+        <li><a href="#skills" class="hover:text-indigo-500" (click)="scrollToSection($event, 'skills', true)">Skills</a></li>
         <li>
-          <a href="#experience" class="hover:text-indigo-500">Experience</a>
+          <a href="#experience" class="hover:text-indigo-500" (click)="scrollToSection($event, 'experience', true)">Experience</a>
         </li>
         <li>
-          <a href="#testimonials" class="hover:text-indigo-500">Testimonials</a>
+          <a href="#open-source" class="hover:text-indigo-500" (click)="scrollToSection($event, 'open-source', true)">Open Source</a>
         </li>
-        <li><a href="#contact" class="hover:text-indigo-500">Contact</a></li>
+        <li><a href="#contact" class="hover:text-indigo-500" (click)="scrollToSection($event, 'contact', true)">Contact</a></li>
       </ul>
     </nav>
   </div>
@@ -95,7 +109,7 @@
 <!-- Hero Section -->
 <section
   id="main"
-  class="max-md:h-full h-screen w-full bg-gradient-to-r from-blue-500 to-purple-500 text-white flex flex-col items-center justify-center"
+  class="max-md:h-full max-md:px-2 h-screen w-full bg-gradient-to-r from-blue-500 to-purple-500 text-white flex flex-col items-center justify-center"
 >
   <div
     class="flex flex-col sm:flex-row items-center justify-center max-md:mt-32"
@@ -110,13 +124,11 @@
         Karachi, Pakistan.
       </p>
     </div>
-    <div class="ml-4 mt-6 sm:mt-0 text-center">
+    <div class="ml-4 mt-6 sm:mt-0 text-center w-[300px] h-[300px]">
       <img
-        src="/picture.png"
+        src="/picture2.png"
         alt="my picture"
-        class="floating-image mt-6 bg-white rounded-full"
-        width="300"
-        height="300"
+        class="floating-image mt-6 bg-white rounded-full h-full w-full"
       />
     </div>
   </div>
@@ -151,7 +163,7 @@
 <!-- About Section -->
 <section
   id="about"
-  class="p-10  text-black"
+  class="p-10 text-black"
 >
   <div
     class="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-center"  data-aos="fade-right"
@@ -219,7 +231,7 @@
       <div class="flex flex-1 items-end justify-center mt-6">
         <a href="https://www.icplan.com/" target="_blank" class="flex cursor-pointer bg-gradient-to-r from-blue-500 to-purple-500 hover:text-transparent bg-clip-text">
           <p class="mr-2 text-lg font-bold  ">Live Demo</p>
-          <img src="/live-demo.png" width="24" height="24" />
+          <img src="/live-demo.png" class="invert" width="24" height="24" />
         </a>
       </div>
     </div>
@@ -242,7 +254,7 @@
       <div class="flex flex-1 justify-center items-end mt-6">
         <a href="https://vue-app-questions-and-answers.web.app/" target="_blank" class="flex cursor-pointer bg-gradient-to-r from-blue-500 to-purple-500 hover:text-transparent bg-clip-text">
           <p class="mr-2 text-lg font-bold">Live Demo</p>
-          <img src="/live-demo.png" width="24" height="24" />
+          <img src="/live-demo.png" class="invert" width="24" height="24" />
         </a>
       </div>
     </div>
@@ -269,7 +281,7 @@
       <div class="flex flex-1 justify-center items-end mt-6">
         <a href="https://prime-event-personnel.web.app/" target="_blank" class="flex cursor-pointer bg-gradient-to-r from-blue-500 to-purple-500 hover:text-transparent bg-clip-text">
           <p class="mr-2 text-lg font-bold">Live Demo</p>
-          <img src="/live-demo.png" width="24" height="24" />
+          <img src="/live-demo.png" class="invert" width="24" height="24" />
         </a>
       </div>
     </div>
@@ -293,7 +305,7 @@
       <div class="flex flex-1 justify-center items-end mt-6">
         <a href="https://mohsinayaz.github.io/create-notes" target="_blank" class="flex cursor-pointer bg-gradient-to-r from-blue-500 to-purple-500 hover:text-transparent bg-clip-text">
           <p class="mr-2 text-lg font-bold">Live Demo</p>
-          <img src="/live-demo.png" width="24" height="24" />
+          <img src="/live-demo.png" class="invert" width="24" height="24" />
         </a>
       </div>
     </div>
@@ -315,7 +327,7 @@
       <div class="flex flex-1 justify-center items-end mt-6">
         <a href="https://groves-restaurant.netlify.app/" target="_blank" class="flex cursor-pointer bg-gradient-to-r from-blue-500 to-purple-500 hover:text-transparent bg-clip-text">
           <p class="mr-2 text-lg font-bold">Live Demo</p>
-          <img src="/live-demo.png" width="24" height="24" />
+          <img src="/live-demo.png" class="invert" width="24" height="24" />
         </a>
       </div>
     </div>
@@ -402,8 +414,8 @@
   <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
     <!-- Experience 1 -->
     <div class="p-6 bg-gray-800 rounded-lg shadow-lg" data-aos="fade-right">
-      <h3 class="text-2xl font-semibold">Senior Software Engineer - Angular</h3>
-      <p class="mt-2 text-sm text-gray-400">Cluster Valley | Nov 2021 - Present</p>
+      <h3 class="text-2xl font-semibold">Software Engineer - Angular</h3>
+      <p class="mt-2 text-sm text-gray-400">Cluster Valley | Nov 2021 - Nov-2024</p>
       <ul class="list-disc mt-4 pl-5 space-y-2 text-sm">
         <li>Led a team of two junior Angular developers, providing mentorship and ensuring project milestones were met.</li>
         <li>Designed and developed scalable frontend applications using Angular, ensuring responsive and user-friendly interfaces.</li>
@@ -427,27 +439,35 @@
       </ul>
     </div>
   </div>
+</section>
 
-  <!-- Additional Experiences -->
-  <div class="mt-8">
-    <h3 class="text-2xl font-bold text-center">Open Source Contributions</h3>
-    <div class="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div class="p-4 bg-gray-800 rounded-lg shadow-md">
-        <h4 class="text-xl font-semibold">Ng Chat List</h4>
-        <p class="mt-2 text-sm text-gray-400">Contributed to a chat-based Angular application.</p>
-      </div>
-
-      <div class="p-4 bg-gray-800 rounded-lg shadow-md">
-        <h4 class="text-xl font-semibold">ngx-device-detector</h4>
-        <p class="mt-2 text-sm text-gray-400">Contributed to an Angular library recognized by Google Developer Experts.</p>
-      </div>
-
-      <div class="p-4 bg-gray-800 rounded-lg shadow-md">
-        <h4 class="text-xl font-semibold">Angular Year Calendar</h4>
-        <p class="mt-2 text-sm text-gray-400">Contributed to an Angular Year Calendar library depends on "date-fns" and "angular/cdk"</p>
+<!-- Additional Experiences -->
+<section id="open-source" class="p-10 bg-gray-white text-black">
+    <div class="mt-8">
+      <h3 class="text-2xl font-bold text-center" data-aos="fade-left">Open Source Contributions</h3>
+      <div class="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" data-aos="fade-right">
+        <div class="p-4 bg-white rounded-lg shadow-lg">
+          <a href="https://shehrozkhannn.github.io/ng-chatlist/" target="_blank" class="flex cursor-pointer bg-gradient-to-r from-blue-500 to-purple-500 hover:text-transparent bg-clip-text">
+            <p class="text-lg font-semibold">Ng Chat List</p>
+          </a>
+          <p class="mt-2 text-sm text-gray-400">Contributed to a chat-based Angular application.</p>
+        </div>
+  
+        <div class="p-4 bg-white rounded-lg shadow-lg">
+          <a href="https://ahsanayaz.github.io/ngx-device-detector/" target="_blank" class="flex cursor-pointer bg-gradient-to-r from-blue-500 to-purple-500 hover:text-transparent bg-clip-text">
+            <p class="text-lg font-semibold">ngx-device-detector</p>
+          </a>
+          <p class="mt-2 text-sm text-gray-400">Contributed to an Angular library recognized by Google Developer Experts.</p>
+        </div>
+  
+        <div class="p-4 bg-white rounded-lg shadow-lg">
+          <a href="https://iomechs.github.io/angular-year-calendar/demo/" target="_blank" class="flex cursor-pointer bg-gradient-to-r from-blue-500 to-purple-500 hover:text-transparent bg-clip-text">
+            <p class="text-lg font-semibold">Angular Year Calendar</p>
+          </a>
+          <p class="mt-2 text-sm text-gray-400">Contributed to an Angular Year Calendar library depends on "date-fns" and "angular/cdk"</p>
+        </div>
       </div>
     </div>
-  </div>
 </section>
 
 
