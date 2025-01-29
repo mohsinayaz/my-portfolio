@@ -1,5 +1,5 @@
 import { NgIf } from '@angular/common';
-import { Component, HostListener } from '@angular/core';
+import { AfterViewInit, Component, HostListener, OnInit } from '@angular/core';
 import AOS from 'aos';
 
 @Component({
@@ -8,7 +8,7 @@ import AOS from 'aos';
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss']
 })
-export class MainComponent {
+export class MainComponent implements OnInit, AfterViewInit {
   isDarkMode: boolean = false;
   showScrollButton: boolean = false;
   isMenuOpen = false;
@@ -18,15 +18,15 @@ export class MainComponent {
   }
 
   ngOnInit() {
-    setTimeout(() => {
-      AOS.init({ duration: 1000 });
-    }, 1000);
     this.isDarkMode = localStorage.getItem('theme') === 'dark';
     this.setTheme(); // Apply the theme when the component initializes
   }
 
   ngAfterViewInit() {
-    AOS.refresh();
+    AOS.init({
+      duration: 1000,  // Animation duration
+      once: true,       // Run animation only once
+    });
   }
 
   downloadResume() {
