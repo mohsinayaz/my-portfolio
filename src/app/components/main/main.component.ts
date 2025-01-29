@@ -18,7 +18,9 @@ export class MainComponent {
   }
 
   ngOnInit() {
-    AOS.init();
+    setTimeout(() => {
+      AOS.init({ duration: 1000 });
+    }, 1000);
     this.isDarkMode = localStorage.getItem('theme') === 'dark';
     this.setTheme(); // Apply the theme when the component initializes
   }
