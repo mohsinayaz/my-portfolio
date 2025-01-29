@@ -1,5 +1,6 @@
 import { NgIf } from '@angular/common';
 import { Component, HostListener } from '@angular/core';
+import AOS from 'aos';
 
 @Component({
   selector: 'app-main',
@@ -17,8 +18,13 @@ export class MainComponent {
   }
 
   ngOnInit() {
+    AOS.init();
     this.isDarkMode = localStorage.getItem('theme') === 'dark';
     this.setTheme(); // Apply the theme when the component initializes
+  }
+
+  ngAfterViewInit() {
+    AOS.refresh();
   }
 
   downloadResume() {
