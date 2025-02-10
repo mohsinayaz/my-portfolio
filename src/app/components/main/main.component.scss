@@ -1,20 +1,28 @@
 .floating-image {
-    padding: 4px;
+  transform: translateY(0);
+  animation: float 4s ease-in-out infinite;
+  object-fit: cover; /* Ensure the image is properly contained */
+}
+
+.cursor {
+  font-weight: bold;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes float {
+  0% {
     transform: translateY(0);
-    animation: float 4s ease-in-out infinite;
-    object-fit: cover; /* Ensure the image is properly contained */
   }
-  
-  @keyframes float {
-    0% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-15px); /* Adjust the floating distance */
-    }
-    100% {
-      transform: translateY(0);
-    }
+  50% {
+    transform: translateY(-15px); /* Adjust the floating distance */
   }
-  
-  
+  100% {
+    transform: translateY(0);
+  }
+}
