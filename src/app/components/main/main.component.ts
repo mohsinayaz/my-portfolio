@@ -1,4 +1,4 @@
-import { NgIf } from "@angular/common";
+import { NgClass, NgIf } from "@angular/common";
 import { AfterViewInit, Component, HostListener, OnInit } from "@angular/core";
 import AOS from "aos";
 
@@ -8,9 +8,10 @@ import AOS from "aos";
   templateUrl: "./main.component.html",
   styleUrls: ["./main.component.scss"],
 })
-export class MainComponent implements OnInit {
+export class MainComponent implements OnInit, AfterViewInit {
   isDarkMode: boolean = false;
   showScrollButton: boolean = false;
+  activeSection: string = 'main';
   isMenuOpen = false;
   texts = [
     "Hi, I'm Mohsin Ayaz.",
@@ -101,6 +102,25 @@ export class MainComponent implements OnInit {
       this.toggleMenu();
     }
   }
+
+  ngAfterViewInit() {
+    const sections = document.querySelectorAll('section[id]');
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            this.activeSection = entry.target.id;
+          }
+        }
+      },
+      {
+        threshold: 0.6, // visible 60% or more to trigger
+      }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+  }
+
 
   setTheme() {
     if (this.isDarkMode) {
