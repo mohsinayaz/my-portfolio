@@ -45,9 +45,7 @@ export class MainComponent implements OnInit, AfterViewInit {
     } else {
       this.typedText = currentText.substring(0, this.charIndex++);
     }
-
     let speed = this.isDeleting ? 50 : 100;
-
     if (!this.isDeleting && this.charIndex === currentText.length) {
       speed = 2000; // Pause before deleting
       this.isDeleting = true;
