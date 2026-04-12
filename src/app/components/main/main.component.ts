@@ -1,15 +1,15 @@
-import { NgClass, NgIf } from "@angular/common";
+import { NgIf } from "@angular/common";
 import { AfterViewInit, Component, HostListener, OnInit } from "@angular/core";
 import AOS from "aos";
 
 @Component({
   selector: "app-main",
+  standalone: true,
   imports: [NgIf],
   templateUrl: "./main.component.html",
   styleUrls: ["./main.component.scss"],
 })
 export class MainComponent implements OnInit, AfterViewInit {
-  isDarkMode: boolean = false;
   showScrollButton: boolean = false;
   activeSection: string = 'main';
   isMenuOpen = false;
@@ -33,8 +33,6 @@ export class MainComponent implements OnInit, AfterViewInit {
       duration: 1000, // Animation duration
       once: true, // Run animation only once
     });
-    this.isDarkMode = localStorage.getItem("theme") === "dark";
-    this.setTheme(); // Apply the theme when the component initializes
     this.typeEffect();
   }
 
@@ -76,12 +74,6 @@ export class MainComponent implements OnInit, AfterViewInit {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
-  toggleTheme() {
-    this.isDarkMode = !this.isDarkMode;
-    localStorage.setItem("theme", this.isDarkMode ? "dark" : "light");
-    this.setTheme();
-  }
-
   scrollToSection(event: Event, sectionId: string, mobileViewSidebar = false) {
     event.preventDefault(); // Prevent default anchor behavior
     const section = document.getElementById(sectionId);
@@ -117,14 +109,5 @@ export class MainComponent implements OnInit, AfterViewInit {
     );
 
     sections.forEach((section) => observer.observe(section));
-  }
-
-
-  setTheme() {
-    if (this.isDarkMode) {
-      document.documentElement.classList.add("dark"); // Apply dark mode
-    } else {
-      document.documentElement.classList.remove("dark"); // Apply light mode
-    }
   }
 }

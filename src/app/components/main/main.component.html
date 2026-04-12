@@ -1,89 +1,124 @@
-
+﻿
 <!-- Header Section -->
 <header
-  class="w-full bg-gray-900 text-white py-5 fixed top-0 left-0 right-0 z-50"
-  [class.bg-gray-900]="!isDarkMode"
-  [class.bg-gray-100]="isDarkMode"
+  class="w-full py-5 fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-xl shadow-lg border-b border-gray-200/50"
 >
-  <div class="container mx-auto flex justify-between items-center px-4">
+  <div class="container mx-auto flex justify-between items-center px-6 max-w-7xl">
+    <!-- Logo and Name -->
     <div
-      class="flex items-center cursor-pointer"
+      class="flex items-center cursor-pointer transition-all duration-300 hover:scale-105 group"
       (click)="scrollToSection($event, 'main')"
     >
-      <img src="/logo.png" width="43" height="43" class="mr-4 mb-2" />
-      <h1
-        class="text-4xl font-bold bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text"
-      >
-        Mohsin Ayaz
-      </h1>
+      <div class="relative">
+        <img src="/logo.png" width="48" height="48" class="mr-4 drop-shadow-sm group-hover:drop-shadow-md transition-all duration-300" />
+        <div class="absolute inset-0 bg-gradient-to-r from-orange-400 to-pink-400 rounded-full opacity-20 group-hover:opacity-30 transition-opacity duration-300"></div>
+      </div>
+      <div>
+        <h1 class="text-3xl font-bold bg-gradient-to-r from-orange-500 via-pink-500 to-red-500 text-transparent bg-clip-text group-hover:from-orange-600 group-hover:via-pink-600 group-hover:to-red-600 transition-all duration-300">
+          Mohsin Ayaz
+        </h1>
+        <p class="text-sm text-gray-600 font-medium -mt-1 opacity-80 group-hover:opacity-100 transition-opacity duration-300">
+          Frontend Developer
+        </p>
+      </div>
     </div>
 
     <!-- Hamburger Menu for Mobile -->
     <div class="lg:hidden flex items-center">
-      <button (click)="toggleMenu()" class="text-white text-2xl">
-        <i class="fas fa-bars"></i>
-        <!-- Hamburger Icon -->
+      <button
+        (click)="toggleMenu()"
+        class="relative p-3 rounded-xl text-gray-700 hover:text-orange-500 hover:bg-orange-50 transition-all duration-300 group"
+      >
+        <div class="w-6 h-6 flex flex-col justify-center items-center">
+          <span class="block w-5 h-0.5 bg-current transition-all duration-300 group-hover:w-6" [class.rotate-45]="isMenuOpen" [class.translate-y-1]="isMenuOpen"></span>
+          <span class="block w-5 h-0.5 bg-current mt-1 transition-all duration-300 group-hover:opacity-0" [class.opacity-0]="isMenuOpen"></span>
+          <span class="block w-5 h-0.5 bg-current mt-1 transition-all duration-300 group-hover:w-6" [class.-rotate-45]="isMenuOpen" [class.-translate-y-1]="isMenuOpen"></span>
+        </div>
       </button>
     </div>
 
     <!-- Desktop Navigation -->
     <nav class="hidden lg:flex">
-      <ul class="flex space-x-6">
+      <ul class="flex space-x-2">
         <li>
           <a
-            class="bg-gradient-to-r from-blue-500 to-purple-500 hover:text-transparent bg-clip-text"
+            class="relative px-4 py-2.5 rounded-xl text-gray-700 hover:text-orange-500 font-medium transition-all duration-300 hover:bg-orange-50 group"
             href="#main"
             (click)="scrollToSection($event, 'main')"
-            >Home</a
           >
+            <span class="relative z-10">Home</span>
+            <div class="absolute inset-0 bg-gradient-to-r from-orange-100 to-pink-100 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </a>
         </li>
         <li>
           <a
-            class="bg-gradient-to-r from-blue-500 to-purple-500 hover:text-transparent bg-clip-text"
+            class="relative px-4 py-2.5 rounded-xl text-gray-700 hover:text-orange-500 font-medium transition-all duration-300 hover:bg-orange-50 group"
             href="#about"
             (click)="scrollToSection($event, 'about')"
-            >About</a
           >
+            <span class="relative z-10">About</span>
+            <div class="absolute inset-0 bg-gradient-to-r from-orange-100 to-pink-100 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </a>
         </li>
         <li>
           <a
-            class="bg-gradient-to-r from-blue-500 to-purple-500 hover:text-transparent bg-clip-text"
+            class="relative px-4 py-2.5 rounded-xl text-gray-700 hover:text-orange-500 font-medium transition-all duration-300 hover:bg-orange-50 group"
             href="#projects"
             (click)="scrollToSection($event, 'projects')"
-            >Projects</a
           >
+            <span class="relative z-10">Projects</span>
+            <div class="absolute inset-0 bg-gradient-to-r from-orange-100 to-pink-100 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </a>
         </li>
         <li>
           <a
-            class="bg-gradient-to-r from-blue-500 to-purple-500 hover:text-transparent bg-clip-text"
+            class="relative px-4 py-2.5 rounded-xl text-gray-700 hover:text-orange-500 font-medium transition-all duration-300 hover:bg-orange-50 group"
             href="#skills"
             (click)="scrollToSection($event, 'skills')"
-            >Skills</a
           >
+            <span class="relative z-10">Skills</span>
+            <div class="absolute inset-0 bg-gradient-to-r from-orange-100 to-pink-100 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </a>
         </li>
         <li>
           <a
-            class="bg-gradient-to-r from-blue-500 to-purple-500 hover:text-transparent bg-clip-text"
+            class="relative px-4 py-2.5 rounded-xl text-gray-700 hover:text-orange-500 font-medium transition-all duration-300 hover:bg-orange-50 group"
             href="#open-source"
             (click)="scrollToSection($event, 'open-source')"
-            >Open Source</a
           >
+            <span class="relative z-10">Open Source</span>
+            <div class="absolute inset-0 bg-gradient-to-r from-orange-100 to-pink-100 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </a>
         </li>
         <li>
           <a
-            class="bg-gradient-to-r from-blue-500 to-purple-500 hover:text-transparent bg-clip-text"
+            class="relative px-4 py-2.5 rounded-xl text-gray-700 hover:text-orange-500 font-medium transition-all duration-300 hover:bg-orange-50 group"
             href="#experience"
             (click)="scrollToSection($event, 'experience')"
-            >Experience</a
           >
+            <span class="relative z-10">Experience</span>
+            <div class="absolute inset-0 bg-gradient-to-r from-orange-100 to-pink-100 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </a>
         </li>
         <li>
           <a
-            class="bg-gradient-to-r from-blue-500 to-purple-500 hover:text-transparent bg-clip-text"
+            class="relative px-4 py-2.5 rounded-xl text-gray-700 hover:text-orange-500 font-medium transition-all duration-300 hover:bg-orange-50 group"
+            href="#education"
+            (click)="scrollToSection($event, 'education')"
+          >
+            <span class="relative z-10">Education</span>
+            <div class="absolute inset-0 bg-gradient-to-r from-orange-100 to-pink-100 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </a>
+        </li>
+        <li>
+          <a
+            class="relative px-4 py-2.5 rounded-xl text-gray-700 hover:text-orange-500 font-medium transition-all duration-300 hover:bg-orange-50 group"
             href="#contact"
             (click)="scrollToSection($event, 'contact')"
-            >Contact</a
           >
+            <span class="relative z-10">Contact</span>
+            <div class="absolute inset-0 bg-gradient-to-r from-orange-100 to-pink-100 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </a>
         </li>
       </ul>
     </nav>
@@ -91,64 +126,88 @@
     <!-- Mobile Navigation (hidden by default) -->
     <nav
       *ngIf="isMenuOpen"
-      class="lg:hidden absolute top-9 left-0 right-0 bg-gray-900 text-white p-4 mt-12 z-50"
+      class="lg:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-xl shadow-xl p-6 z-50 border-t border-gray-200/50 animate-in slide-in-from-top-2 duration-300"
     >
-      <ul class="flex flex-col items-center space-y-4">
+      <ul class="flex flex-col space-y-1">
         <li>
           <a
             href="#main"
-            class="hover:text-indigo-500"
+            class="block w-full text-left px-4 py-3 rounded-xl text-gray-700 hover:text-orange-500 hover:bg-orange-50 transition-all duration-300 font-medium"
             (click)="scrollToSection($event, 'main', true)"
-            >Home</a
           >
+            <i class="fas fa-home mr-3 text-gray-400"></i>
+            Home
+          </a>
         </li>
         <li>
           <a
             href="#about"
-            class="hover:text-indigo-500"
+            class="block w-full text-left px-4 py-3 rounded-xl text-gray-700 hover:text-orange-500 hover:bg-orange-50 transition-all duration-300 font-medium"
             (click)="scrollToSection($event, 'about', true)"
-            >About</a
           >
+            <i class="fas fa-user mr-3 text-gray-400"></i>
+            About
+          </a>
         </li>
         <li>
           <a
             href="#projects"
-            class="hover:text-indigo-500"
+            class="block w-full text-left px-4 py-3 rounded-xl text-gray-700 hover:text-orange-500 hover:bg-orange-50 transition-all duration-300 font-medium"
             (click)="scrollToSection($event, 'projects', true)"
-            >Projects</a
           >
+            <i class="fas fa-code mr-3 text-gray-400"></i>
+            Projects
+          </a>
         </li>
         <li>
           <a
             href="#skills"
-            class="hover:text-indigo-500"
+            class="block w-full text-left px-4 py-3 rounded-xl text-gray-700 hover:text-orange-500 hover:bg-orange-50 transition-all duration-300 font-medium"
             (click)="scrollToSection($event, 'skills', true)"
-            >Skills</a
           >
+            <i class="fas fa-tools mr-3 text-gray-400"></i>
+            Skills
+          </a>
         </li>
         <li>
           <a
             href="#open-source"
-            class="hover:text-indigo-500"
+            class="block w-full text-left px-4 py-3 rounded-xl text-gray-700 hover:text-orange-500 hover:bg-orange-50 transition-all duration-300 font-medium"
             (click)="scrollToSection($event, 'open-source', true)"
-            >Open Source</a
           >
+            <i class="fab fa-github mr-3 text-gray-400"></i>
+            Open Source
+          </a>
         </li>
         <li>
           <a
             href="#experience"
-            class="hover:text-indigo-500"
+            class="block w-full text-left px-4 py-3 rounded-xl text-gray-700 hover:text-orange-500 hover:bg-orange-50 transition-all duration-300 font-medium"
             (click)="scrollToSection($event, 'experience', true)"
-            >Experience</a
           >
+            <i class="fas fa-briefcase mr-3 text-gray-400"></i>
+            Experience
+          </a>
+        </li>
+        <li>
+          <a
+            href="#education"
+            class="block w-full text-left px-4 py-3 rounded-xl text-gray-700 hover:text-orange-500 hover:bg-orange-50 transition-all duration-300 font-medium"
+            (click)="scrollToSection($event, 'education', true)"
+          >
+            <i class="fas fa-graduation-cap mr-3 text-gray-400"></i>
+            Education
+          </a>
         </li>
         <li>
           <a
             href="#contact"
-            class="hover:text-indigo-500"
+            class="block w-full text-left px-4 py-3 rounded-xl text-gray-700 hover:text-orange-500 hover:bg-orange-50 transition-all duration-300 font-medium"
             (click)="scrollToSection($event, 'contact', true)"
-            >Contact</a
           >
+            <i class="fas fa-envelope mr-3 text-gray-400"></i>
+            Contact
+          </a>
         </li>
       </ul>
     </nav>
@@ -159,543 +218,741 @@
 <!-- Hero Section -->
 <section
   id="main"
-  class="max-md:h-full max-md:px-2 h-screen w-full bg-gradient-to-r from-blue-500 to-purple-500 text-white flex flex-col items-center justify-center"
+  class="relative overflow-hidden max-md:h-full max-md:px-2 h-screen w-full bg-[#0f1731] text-white flex items-center justify-center"
 >
-  <div
-    class="flex flex-col sm:flex-row items-center justify-center max-md:mt-32"
-  >
-    <div class="w-full sm:w-1/2 text-center">
-      <h1 class="text-4xl sm:text-6xl font-extrabold" data-aos="fade-up">
-        <b class="text-black">S</b>enior <b class="text-black">S</b>oftware
-        <b class="text-black">E</b>ngineer
-      </h1>
-      <p class="mt-6 text-xl sm:text-2xl">
-        {{ typedText }}<span class="cursor">|</span>
-      </p>
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(108,99,255,0.24),_transparent_18%),radial-gradient(circle_at_bottom_right,_rgba(255,77,126,0.22),_transparent_16%)] pointer-events-none"></div>
+  <div class="absolute inset-0 bg-[linear-gradient(135deg,_rgba(33,37,74,0.88),_rgba(18,24,57,0.92)_55%,_rgba(255,93,139,0.08))]"></div>
+  <div class="absolute inset-0 bg-[radial-gradient(circle,_rgba(255,255,255,0.04),_transparent_35%)]"></div>
+
+  <div class="relative z-10 max-w-7xl px-4 w-full mt-[100px]">
+    <div class="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] px-6 gap-12 items-center">
+      <div class="flex flex-col justify-center text-center lg:text-left">
+        <div class="inline-flex items-center justify-center lg:justify-start gap-3 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm text-white/80 tracking-[0.35em] mb-6 backdrop-blur-sm">
+          <span class="h-2 w-2 rounded-full bg-[#ff4d7e] shadow-[0_0_16px_rgba(255,77,126,0.5)]"></span>
+          Senior Software Engineer
+        </div>
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-black leading-tight tracking-[-0.04em]" data-aos="fade-up">
+          Crafting premium digital products<br />with speed, polish, and impact.
+        </h1>
+        <p class="mt-8 text-lg sm:text-xl text-white/80 max-w-2xl mx-auto lg:mx-0" data-aos="fade-up" data-aos-delay="100">
+          I build polished front-end experiences with Angular, React, Vue, and modern design systems that help brands stand out online.
+        </p>
+        <div class="mt-10 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4" data-aos="fade-up" data-aos-delay="200">
+          <button
+            class="inline-flex items-center justify-center rounded-full bg-white text-[#ff4d7e] font-semibold px-8 py-4 shadow-[0_24px_70px_rgba(255,77,126,0.18)] hover:scale-[1.02] transition-transform duration-300"
+            (click)="downloadResume()"
+          >
+            Download Resume
+          </button>
+          <a
+            href="#projects"
+            class="inline-flex items-center justify-center rounded-full border border-white/80 bg-white/10 text-white font-semibold px-8 py-4 hover:bg-white/20 transition-all duration-300"
+            (click)="scrollToSection($event, 'projects')"
+          >
+            View My Work
+          </a>
+        </div>
+        <div class="mt-10 grid grid-cols-2 gap-4 max-w-md mx-auto lg:mx-0">
+          <div class="rounded-[24px] border border-white/10 bg-white/7 p-5 backdrop-blur-md">
+            <p class="text-sm text-white/70">Projects Delivered</p>
+            <p class="mt-3 text-3xl font-bold text-white">12+</p>
+          </div>
+          <div class="rounded-[24px] border border-white/10 bg-white/7 p-5 backdrop-blur-md">
+            <p class="text-sm text-white/70">Trusted by teams</p>
+            <p class="mt-3 text-3xl font-bold text-white">8+</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative grid place-items-center">
+        <div class="absolute -right-8 top-10 h-40 w-40 rounded-full bg-[#ff4d7e]/20 blur-3xl"></div>
+        <div class="absolute -left-10 bottom-10 h-36 w-36 rounded-full bg-[#5f75ff]/20 blur-3xl"></div>
+        <div class="relative rounded-[42px] border border-white/10 bg-white/10 shadow-[0_40px_90px_rgba(0,0,0,0.28)] backdrop-blur-xl p-4">
+          <div class="rounded-[34px] overflow-hidden border border-white/15 bg-white/5">
+            <img
+              src="/picture4.png"
+              alt="Mohsin Ayaz"
+              class="h-[300px] w-full object-cover"
+            />
+          </div>
+          <div class="mt-6 rounded-[28px] bg-white/10 border border-white/10 p-5 backdrop-blur-md shadow-inner">
+            <p class="text-sm uppercase tracking-[0.3em] text-white/70">Focused on</p>
+            <div class="mt-4 grid grid-cols-2 gap-3">
+              <span class="rounded-2xl border border-white/15 bg-white/10 px-4 py-3 text-sm text-white/90">Angular</span>
+              <span class="rounded-2xl border border-white/15 bg-white/10 px-4 py-3 text-sm text-white/90">React</span>
+              <span class="rounded-2xl border border-white/15 bg-white/10 px-4 py-3 text-sm text-white/90">Vue</span>
+              <span class="rounded-2xl border border-white/15 bg-white/10 px-4 py-3 text-sm text-white/90">TypeScript</span>
+            </div>
+          </div>
+          <div class="absolute -top-8 right-6 rounded-full border border-white/15 bg-[#ff4d7e]/20 px-4 py-2 text-xs font-semibold text-white shadow-[0_16px_40px_rgba(255,77,126,0.18)]">
+            Trusted by product teams
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="ml-4 mt-6 sm:mt-0 text-center h-[350px]">
-      <img
-        src="/picture4.png"
-        alt="my picture"
-        class="floating-image mt-6 rounded-full h-full w-full"
-      />
-    </div>
-  </div>
-  <div
-    class="flex max-md:items-start w-full items-center justify-center max-md:m-0 mt-6 text-xl sm:text-3xl max-md:px-2 max-md:py-6"
-  >
-    <span class="max-md:w-[35%] max-md:mt-2 max-md:text-xl text-2xl"
-      >Tech Stack |</span
-    >
-    <div
-      class="flex flex-wrap justify-center max-md:gap-2 gap-4 sm:gap-6 max-md:m-0 mt-4 ml-4 sm:mt-0 max-md:w-[65%]"
-    >
-      <img src="/html.png" title="HTML" class="cursor-pointer" />
-      <img src="/css.png" title="CSS" class="cursor-pointer" />
-      <img src="/js.png" title="JavaScript" class="cursor-pointer" />
-      <img src="/angular.png" title="Angular" class="cursor-pointer" />
-      <img src="/bootstrap.png" title="Bootstrap" class="cursor-pointer" />
-      <img src="/material-ui.png" title="Material-UI" class="cursor-pointer" />
-      <img src="/ts.png" title="TypeScript" class="cursor-pointer" />
-    </div>
-  </div>
-  <div class="h-[180px] flex items-center">
-    <button
-      class="bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold py-2 px-4 border border-solid"
-      (click)="downloadResume()"
-    >
-      Download Resume
-    </button>
   </div>
 </section>
 
 <!-- About Section -->
-<section id="about" class="p-10 text-black">
-  <div
-    class="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-center"
-    data-aos="fade-right"
-  >
-    <!-- Profile Image -->
-    <div class="flex justify-end" data-aos="fade-right">
-      <div class="rounded-lg">
-        <img
-          src="/laptop.jpeg"
-          alt="Profile Picture"
-          class="rounded-3xl floating-image p-1"
-          width="700"
-          height="700"
-        />
-      </div>
-    </div>
-    <!-- About Content -->
+<section id="about" class="py-20 px-4 bg-gradient-to-b from-white via-blue-50 to-white text-gray-800">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-5xl font-bold text-center mb-16 text-blue-600" data-aos="fade-up">
+      About Me
+    </h2>
     <div
-      class="flex flex-col items-center"
-      data-aos="fade-left"
-      data-aos-delay="200"
+      class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+      data-aos="fade-right"
     >
-      <h2 class="text-5xl font-extrabold mb-4">About Me</h2>
-      <div>
-        <p class="text-lg mb-6">
-          I am a passionate Frontend Developer with expertise in crafting
-          modern, dynamic, and responsive web applications. With a strong
-          foundation in Angular, React, and Vue.js, I specialize in building
-          user-friendly interfaces that deliver exceptional user experiences.
-        </p>
-        <p class="text-lg mb-6">
-          My toolkit includes TypeScript, JavaScript, Tailwind CSS, and other
-          cutting-edge technologies, enabling me to bring designs to life with
-          precision and style. I take pride in creating clean, efficient, and
-          maintainable code.
-        </p>
+      <!-- Profile Image -->
+      <div class="flex justify-center lg:justify-end" data-aos="fade-right">
+        <div class="relative">
+          <div class="absolute inset-0 bg-gradient-to-br from-blue-400 to-blue-600 rounded-3xl blur-xl opacity-30"></div>
+          <img
+            src="/laptop.jpeg"
+            alt="Profile Picture"
+            class="relative rounded-3xl w-full max-w-md shadow-2xl object-cover border-4 border-blue-100"
+          />
+        </div>
+      </div>
+      <!-- About Content -->
+      <div
+        class="flex flex-col justify-center"
+        data-aos="fade-left"
+        data-aos-delay="200"
+      >
+        <div class="space-y-6">
+          <p class="text-lg leading-relaxed text-gray-700">
+            I am a passionate <span class="font-semibold text-blue-600">Frontend Developer</span> with expertise in crafting
+            modern, dynamic, and responsive web applications. With a strong
+            foundation in <span class="font-semibold">Angular, React, and Vue.js</span>, I specialize in building
+            user-friendly interfaces that deliver exceptional user experiences.
+          </p>
+          <p class="text-lg leading-relaxed text-gray-700">
+            My toolkit includes <span class="font-semibold">TypeScript, JavaScript, Tailwind CSS</span>, and other
+            cutting-edge technologies, enabling me to bring designs to life with
+            precision and style. I take pride in creating clean, efficient, and
+            maintainable code.
+          </p>
+          <div class="pt-6 flex flex-wrap gap-3">
+            <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">Frontend Development</span>
+            <span class="px-4 py-2 bg-green-100 text-green-700 rounded-full text-sm font-medium">UI/UX Design</span>
+            <span class="px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">Web Applications</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- Projects Section -->
-<section id="projects" class="p-10 bg-gray-900 text-white">
-  <h2 class="text-4xl font-bold text-center mb-6" data-aos="fade-right">
-    My Projects
-  </h2>
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-    <div
-      class="p-6 bg-indigo-700 rounded-lg shadow-lg flex flex-col"
-      data-aos="zoom-in"
-    >
-      <img src="/Icplan.png" width="500" height="500" />
-      <div class="mt-4">
-        <h2 class="text-2xl font-semibold">ICPlan</h2>
-        <p class="mt-2 text-sm">
-          ● Facilitated communication planning for teams through streamlined
-          activity plotting and real-time updates.
-        </p>
-        <p class="mt-2 text-sm">
-          ● Designed templates, protected file storage, and robust communication
-          features for enhanced collaboration
-        </p>
-      </div>
-      <div class="flex flex-1 items-end justify-center mt-6">
-        <a
-          href="https://www.icplan.com/"
-          target="_blank"
-          class="flex cursor-pointer bg-gradient-to-r from-blue-500 to-purple-500 hover:text-transparent bg-clip-text"
-        >
-          <p class="mr-2 text-lg font-bold">Live Demo</p>
-          <img src="/live-demo.png" class="invert" width="24" height="24" />
-        </a>
-      </div>
+<section id="projects" class="py-20 px-4 bg-gray-50 text-gray-800">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16" data-aos="fade-up">
+      <h2 class="text-5xl font-bold mb-4 text-green-600">
+        Featured Projects
+      </h2>
+      <p class="text-lg text-gray-600">Showcasing my best work and technical expertise</p>
     </div>
-    <div
-      class="p-6 bg-blue-700 rounded-lg shadow-lg flex flex-col"
-      data-aos="zoom-in"
-      data-aos-delay="200"
-    >
-      <img src="/vueQ&A.png" width="500" height="500" />
-      <div class="mt-4">
-        <h2 class="text-2xl font-semibold">Vue Q&A App</h2>
-        <p class="mt-2 text-sm">
-          ● Developed a Vue 3 application integrated with Firebase, featuring
-          dynamic five-question navigation leading to category and product
-          pages.
-        </p>
-        <p class="mt-2 text-sm">
-          ● Implemented real-time data fetching for an engaging user experience.
-        </p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div
+        class="group bg-gradient-to-br from-blue-400 to-blue-600 text-white rounded-2xl shadow-lg overflow-hidden flex flex-col transform transition-all duration-300 hover:shadow-2xl hover:scale-105"
+        data-aos="zoom-in"
+      >
+        <div class="h-48 overflow-hidden bg-blue-500">
+          <img src="/Icplan.png" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+        </div>
+        <div class="p-6 flex flex-col flex-1">
+          <h3 class="text-2xl font-bold mb-2">ICPlan</h3>
+          <p class="text-sm text-blue-100 mb-4 flex-1">
+            ● Facilitated communication planning for teams through streamlined activity plotting and real-time updates.
+            ● Designed templates, protected file storage, and robust communication features for enhanced collaboration
+          </p>
+          <a
+            href="https://www.icplan.com/"
+            target="_blank"
+            class="inline-flex items-center text-white hover:text-blue-200 transition-colors font-semibold mt-auto"
+          >
+            Live Demo <i class="fas fa-external-link-alt ml-2 text-sm"></i>
+          </a>
+        </div>
       </div>
-      <div class="flex flex-1 justify-center items-end mt-6">
-        <a
-          href="https://vue-app-questions-and-answers.web.app/"
-          target="_blank"
-          class="flex cursor-pointer bg-gradient-to-r from-blue-500 to-purple-500 hover:text-transparent bg-clip-text"
-        >
-          <p class="mr-2 text-lg font-bold">Live Demo</p>
-          <img src="/live-demo.png" class="invert" width="24" height="24" />
-        </a>
+      <div
+        class="group bg-gradient-to-br from-green-400 to-green-600 text-white rounded-2xl shadow-lg overflow-hidden flex flex-col transform transition-all duration-300 hover:shadow-2xl hover:scale-105"
+        data-aos="zoom-in"
+        data-aos-delay="200"
+      >
+        <div class="h-48 overflow-hidden bg-green-500">
+          <img src="/vueQ&A.png" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+        </div>
+        <div class="p-6 flex flex-col flex-1">
+          <h3 class="text-2xl font-bold mb-2">Vue Q&A App</h3>
+          <p class="text-sm text-green-100 mb-4 flex-1">
+            ● Developed a Vue 3 application integrated with Firebase, featuring dynamic five-question navigation.
+            ● Implemented real-time data fetching for an engaging user experience.
+          </p>
+          <a
+            href="https://vue-app-questions-and-answers.web.app/"
+            target="_blank"
+            class="inline-flex items-center text-white hover:text-green-200 transition-colors font-semibold mt-auto"
+          >
+            Live Demo <i class="fas fa-external-link-alt ml-2 text-sm"></i>
+          </a>
+        </div>
       </div>
-    </div>
-    <div
-      class="p-6 bg-purple-700 rounded-lg shadow-lg flex flex-col"
-      data-aos="zoom-in"
-      data-aos-delay="400"
-    >
-      <img src="/prime-event.png" width="500" height="500" />
-      <div class="mt-4">
-        <h2 class="text-2xl font-semibold">Prime Event Personnel</h2>
-        <p class="mt-2 text-sm">
-          ● Built a web platform for event industries to manage job postings and
-          applications.
-        </p>
-        <p class="mt-2 text-sm">
-          ● Designed features for businesses to post jobs, track proposals, and
-          for workers to apply and monitor status.
-        </p>
-        <p class="mt-2 text-sm">
-          ● Utilized React, Tailwind CSS, Formik, Yup, and Firebase for robust
-          data management and user authentication.
-        </p>
+      <div
+        class="group bg-gradient-to-br from-purple-400 to-purple-600 text-white rounded-2xl shadow-lg overflow-hidden flex flex-col transform transition-all duration-300 hover:shadow-2xl hover:scale-105"
+        data-aos="zoom-in"
+        data-aos-delay="400"
+      >
+        <div class="h-48 overflow-hidden bg-purple-500">
+          <img src="/prime-event.png" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+        </div>
+        <div class="p-6 flex flex-col flex-1">
+          <h3 class="text-2xl font-bold mb-2">Prime Event Personnel</h3>
+          <p class="text-sm text-purple-100 mb-4 flex-1">
+            ● Built a web platform for event industries to manage job postings and applications.
+            ● Utilized React, Tailwind CSS, Formik, Yup, and Firebase for robust data management.
+          </p>
+          <a
+            href="https://prime-event-personnel.web.app/"
+            target="_blank"
+            class="inline-flex items-center text-white hover:text-purple-200 transition-colors font-semibold mt-auto"
+          >
+            Live Demo <i class="fas fa-external-link-alt ml-2 text-sm"></i>
+          </a>
+        </div>
       </div>
-      <div class="flex flex-1 justify-center items-end mt-6">
-        <a
-          href="https://prime-event-personnel.web.app/"
-          target="_blank"
-          class="flex cursor-pointer bg-gradient-to-r from-blue-500 to-purple-500 hover:text-transparent bg-clip-text"
-        >
-          <p class="mr-2 text-lg font-bold">Live Demo</p>
-          <img src="/live-demo.png" class="invert" width="24" height="24" />
-        </a>
+      <div
+        class="group bg-gradient-to-br from-red-400 to-red-600 text-white rounded-2xl shadow-lg overflow-hidden flex flex-col transform transition-all duration-300 hover:shadow-2xl hover:scale-105"
+        data-aos="zoom-in"
+      >
+        <div class="h-48 overflow-hidden bg-red-500">
+          <img src="/online-cv-rocks.png" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+        </div>
+        <div class="p-6 flex flex-col flex-1">
+          <h3 class="text-2xl font-bold mb-2">Online CV Rocks</h3>
+          <p class="text-sm text-red-100 mb-4 flex-1">
+            ● Built a SaaS resume platform using Vue.js, Firebase, and Vuetify with SSO authentication.
+            ● Implemented dashboard and public profile pages for users to manage resume data.
+          </p>
+          <a
+            href="https://dev-my.onlinecv.rocks/"
+            target="_blank"
+            class="inline-flex items-center text-white hover:text-red-200 transition-colors font-semibold mt-auto"
+          >
+            Live Demo <i class="fas fa-external-link-alt ml-2 text-sm"></i>
+          </a>
+        </div>
       </div>
-    </div>
-    <div
-      class="p-6 bg-indigo-700 rounded-lg shadow-lg flex flex-col"
-      data-aos="zoom-in"
-    >
-      <img src="/online-cv-rocks.png" width="500" height="500" />
-      <div class="mt-4">
-        <h2 class="text-2xl font-semibold">Online Cv Rocks</h2>
-        <p class="mt-2 text-sm">
-          ● Built a SaaS resume platform using Vue.js, Firebase, and Vuetify, enabling users to create and share personalized CVs through public profile links.
-        </p>
-        <p class="mt-2 text-sm">
-          ● Implemented SSO authentication with LinkedIn, Google, and Microsoft, securely retrieving user details like name, email, and job title during login.
-        </p>
-        <p class="mt-2 text-sm">
-          ● Designed and developed dynamic dashboard and public profile pages, allowing users to manage their resume data and share a mobile-optimized, read-only version via a custom URL.
-        </p>
-        <p class="mt-2 text-sm">
-          ● Created modular components for profile sections (Work History, Education, Projects, etc.) with support for real-time updates, responsive layout, and future UI theming.
-        </p>
+      <div
+        class="group bg-gradient-to-br from-yellow-400 to-yellow-600 text-white rounded-2xl shadow-lg overflow-hidden flex flex-col transform transition-all duration-300 hover:shadow-2xl hover:scale-105"
+        data-aos="zoom-in"
+      >
+        <div class="h-48 overflow-hidden bg-yellow-500">
+          <img src="/create-notes.png" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+        </div>
+        <div class="p-6 flex flex-col flex-1">
+          <h3 class="text-2xl font-bold mb-2">Create Notes</h3>
+          <p class="text-sm text-yellow-100 mb-4 flex-1">
+            ● Developed a React-based sticky notes web application with an intuitive interface.
+            ● Implemented dynamic state management and persistent data storage.
+          </p>
+          <a
+            href="https://mohsinayaz.github.io/create-notes"
+            target="_blank"
+            class="inline-flex items-center text-white hover:text-yellow-200 transition-colors font-semibold mt-auto"
+          >
+            Live Demo <i class="fas fa-external-link-alt ml-2 text-sm"></i>
+          </a>
+        </div>
       </div>
-      <div class="flex flex-1 justify-center items-end mt-6">
-        <a
-          href="https://dev-my.onlinecv.rocks/"
-          target="_blank"
-          class="flex cursor-pointer bg-gradient-to-r from-blue-500 to-purple-500 hover:text-transparent bg-clip-text"
-        >
-          <p class="mr-2 text-lg font-bold">Live Demo</p>
-          <img src="/live-demo.png" class="invert" width="24" height="24" />
-        </a>
+      <div
+        class="group bg-gradient-to-br from-indigo-400 to-indigo-600 text-white rounded-2xl shadow-lg overflow-hidden flex flex-col transform transition-all duration-300 hover:shadow-2xl hover:scale-105"
+        data-aos="zoom-in"
+        data-aos-delay="200"
+      >
+        <div class="h-48 overflow-hidden bg-indigo-500">
+          <img src="/pulse-checker.png" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+        </div>
+        <div class="p-6 flex flex-col flex-1">
+          <h3 class="text-2xl font-bold mb-2">Pulse Checker</h3>
+          <p class="text-sm text-indigo-100 mb-4 flex-1">
+            ● Collaborated on a real-time feedback application using Angular and NestJS.
+            ● Integrated WebSocket-based communication for low-latency live updates.
+          </p>
+          <a
+            href="https://pulsechecker.netlify.com"
+            target="_blank"
+            class="inline-flex items-center text-white hover:text-indigo-200 transition-colors font-semibold mt-auto"
+          >
+            Live Demo <i class="fas fa-external-link-alt ml-2 text-sm"></i>
+          </a>
+        </div>
       </div>
-    </div>
-    <div
-      class="p-6 bg-indigo-700 rounded-lg shadow-lg flex flex-col"
-      data-aos="zoom-in"
-    >
-      <img src="/create-notes.png" width="500" height="500" />
-      <div class="mt-4">
-        <h2 class="text-2xl font-semibold">Create Notes</h2>
-        <p class="mt-2 text-sm">
-          ● Developed a React-based sticky notes web application enabling users
-          to create, edit, and delete notes with an intuitive interface.
-        </p>
-        <p class="mt-2 text-sm">
-          ● Implemented dynamic state management for real-time updates and
-          seamless user interactions.
-        </p>
-        <p class="mt-2 text-sm">
-          ● Enhanced user experience by integrating features like persistent
-          data storage and responsive design.
-        </p>
-      </div>
-      <div class="flex flex-1 justify-center items-end mt-6">
-        <a
-          href="https://mohsinayaz.github.io/create-notes"
-          target="_blank"
-          class="flex cursor-pointer bg-gradient-to-r from-blue-500 to-purple-500 hover:text-transparent bg-clip-text"
-        >
-          <p class="mr-2 text-lg font-bold">Live Demo</p>
-          <img src="/live-demo.png" class="invert" width="24" height="24" />
-        </a>
-      </div>
-    </div>
-    <div
-      class="p-6 bg-blue-700 rounded-lg shadow-lg flex flex-col"
-      data-aos="zoom-in"
-      data-aos-delay="200"
-    >
-      <img src="/pulse-checker.png" width="500" height="500px" />
-      <div class="mt-4">
-        <h2 class="text-2xl font-semibold">Pulse Checker</h2>
-        <p class="mt-2 text-sm">
-          ● Collaborated on a real-time feedback application using Angular and NestJS, allowing users to respond actively during live talks or sessions
-        </p>
-        <p class="mt-2 text-sm">
-          ● Developed dynamic front-end components to visualize audience sentiment and feedback in real-time, enhancing speaker engagement and responsiveness.
-        </p>
-        <p class="mt-2 text-sm">
-          ● Integrated WebSocket-based communication between client and server to ensure low-latency, live updates during ongoing sessions.
-        </p>
-      </div>
-      <div class="flex flex-1 justify-center items-end mt-6">
-        <a
-          href="https://pulsechecker.netlify.com"
-          target="_blank"
-          class="flex cursor-pointer bg-gradient-to-r from-blue-500 to-purple-500 hover:text-transparent bg-clip-text"
-        >
-          <p class="mr-2 text-lg font-bold">Live Demo</p>
-          <img src="/live-demo.png" class="invert" width="24" height="24" />
-        </a>
-      </div>
-    </div>
-    <div
-      class="p-6 bg-blue-700 rounded-lg shadow-lg flex flex-col"
-      data-aos="zoom-in"
-      data-aos-delay="200"
-    >
-      <img src="/groves.png" width="500" height="500" />
-      <div class="mt-4">
-        <h2 class="text-2xl font-semibold">Groves Restaurant</h2>
-        <p class="mt-2 text-sm">
-          ● Developed a full-stack restaurant management app with Angular 19 and
-          Tailwind CSS, ensuring full mobile responsiveness for a seamless
-          experience on all devices.
-        </p>
-        <p class="mt-2 text-sm">
-          ● Features include menu management, order tracking, and customer
-          feedback system.
-        </p>
-      </div>
-      <div class="flex flex-1 justify-center items-end mt-6">
-        <a
-          href="https://groves-restaurant.netlify.app/"
-          target="_blank"
-          class="flex cursor-pointer bg-gradient-to-r from-blue-500 to-purple-500 hover:text-transparent bg-clip-text"
-        >
-          <p class="mr-2 text-lg font-bold">Live Demo</p>
-          <img src="/live-demo.png" class="invert" width="24" height="24" />
-        </a>
+      <div
+        class="group bg-gradient-to-br from-teal-400 to-teal-600 text-white rounded-2xl shadow-lg overflow-hidden flex flex-col transform transition-all duration-300 hover:shadow-2xl hover:scale-105"
+        data-aos="zoom-in"
+        data-aos-delay="200"
+      >
+        <div class="h-48 overflow-hidden bg-teal-500">
+          <img src="/groves.png" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+        </div>
+        <div class="p-6 flex flex-col flex-1">
+          <h3 class="text-2xl font-bold mb-2">Groves Restaurant</h3>
+          <p class="text-sm text-teal-100 mb-4 flex-1">
+            ● Developed a full-stack restaurant management app with Angular 19 and Tailwind CSS.
+            ● Features include menu management, order tracking, and customer feedback system.
+          </p>
+          <a
+            href="https://groves-restaurant.netlify.app/"
+            target="_blank"
+            class="inline-flex items-center text-white hover:text-teal-200 transition-colors font-semibold mt-auto"
+          >
+            Live Demo <i class="fas fa-external-link-alt ml-2 text-sm"></i>
+          </a>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- Skills Section -->
-<section id="skills" class="p-10 bg-gray-50 text-gray-800">
-  <h2 class="text-4xl font-bold text-center mb-8">Skills</h2>
-  <p class="text-xl text-center mb-8">
-    Here are the technologies and tools I specialize in:
-  </p>
-  <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 text-center">
-    <!-- Skill 1 -->
-    <div
-      class="bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition-all"
-    >
-      <img src="/angular.png" alt="Angular" class="mx-auto h-16 w-16 mb-4" />
-      <p class="font-semibold text-lg">Angular</p>
+<section id="skills" class="py-20 px-4 bg-white text-gray-800">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16" data-aos="fade-up">
+      <h2 class="text-5xl font-bold mb-4 text-purple-600">Skills & Technologies</h2>
+      <p class="text-lg text-gray-600">My technical expertise across various frontend technologies</p>
     </div>
-    <!-- Skill 2 -->
-    <div
-      class="bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition-all"
-    >
-      <img src="/react.png" alt="React" class="mx-auto h-16 w-16 mb-4" />
-      <p class="font-semibold text-lg">React</p>
-    </div>
-    <!-- Skill 3 -->
-    <div
-      class="bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition-all"
-    >
-      <img src="/vue.png" alt="Vue.js" class="mx-auto h-16 w-16 mb-4" />
-      <p class="font-semibold text-lg">Vue.js</p>
-    </div>
-    <!-- Skill 4 -->
-    <div
-      class="bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition-all"
-    >
-      <img
-        src="/tailwind.png"
-        alt="Tailwind CSS"
-        class="mx-auto h-16 w-16 mb-4"
-      />
-      <p class="font-semibold text-lg">Tailwind</p>
-    </div>
-    <!-- Skill 5 -->
-    <div
-      class="bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition-all"
-    >
-      <img src="/ts.png" alt="TypeScript" class="mx-auto h-16 w-16 mb-4" />
-      <p class="font-semibold text-lg">TypeScript</p>
-    </div>
-    <!-- Skill 6 -->
-    <div
-      class="bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition-all"
-    >
-      <img src="/js.png" alt="JavaScript" class="mx-auto h-16 w-16 mb-4" />
-      <p class="font-semibold text-lg">JavaScript</p>
-    </div>
-    <!-- Skill 7 -->
-    <div
-      class="bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition-all"
-    >
-      <img src="/html.png" alt="HTML" class="mx-auto h-16 w-16 mb-4" />
-      <p class="font-semibold text-lg">HTML</p>
-    </div>
-    <!-- Skill 8 -->
-    <div
-      class="bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition-all"
-    >
-      <img src="/css.png" alt="CSS" class="mx-auto h-16 w-16 mb-4" />
-      <p class="font-semibold text-lg">CSS</p>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div data-aos="fade-right">
+        <h3 class="text-3xl font-bold mb-6 text-purple-600">Frontend Technologies</h3>
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+          <div class="group bg-gradient-to-br from-blue-400 to-blue-600 text-white p-6 rounded-xl shadow-lg transform transition-all duration-300 hover:shadow-2xl hover:scale-105 flex flex-col items-center justify-center text-center cursor-pointer">
+            <img src="/angular.png" alt="Angular" class="h-16 w-16 mb-3 group-hover:drop-shadow-lg transition-all" />
+            <p class="font-bold text-sm">Angular</p>
+          </div>
+          <div class="group bg-gradient-to-br from-green-400 to-green-600 text-white p-6 rounded-xl shadow-lg transform transition-all duration-300 hover:shadow-2xl hover:scale-105 flex flex-col items-center justify-center text-center cursor-pointer">
+            <img src="/react.png" alt="React" class="h-16 w-16 mb-3 group-hover:drop-shadow-lg transition-all" />
+            <p class="font-bold text-sm">React</p>
+          </div>
+          <div class="group bg-gradient-to-br from-purple-400 to-purple-600 text-white p-6 rounded-xl shadow-lg transform transition-all duration-300 hover:shadow-2xl hover:scale-105 flex flex-col items-center justify-center text-center cursor-pointer">
+            <img src="/vue.png" alt="Vue.js" class="h-16 w-16 mb-3 group-hover:drop-shadow-lg transition-all" />
+            <p class="font-bold text-sm">Vue.js</p>
+          </div>
+          <div class="group bg-gradient-to-br from-red-400 to-red-600 text-white p-6 rounded-xl shadow-lg transform transition-all duration-300 hover:shadow-2xl hover:scale-105 flex flex-col items-center justify-center text-center cursor-pointer">
+            <img src="/ts.png" alt="TypeScript" class="h-16 w-16 mb-3 group-hover:drop-shadow-lg transition-all" />
+            <p class="font-bold text-sm">TypeScript</p>
+          </div>
+          <div class="group bg-gradient-to-br from-indigo-400 to-indigo-600 text-white p-6 rounded-xl shadow-lg transform transition-all duration-300 hover:shadow-2xl hover:scale-105 flex flex-col items-center justify-center text-center cursor-pointer">
+            <img src="/js.png" alt="JavaScript" class="h-16 w-16 mb-3 group-hover:drop-shadow-lg transition-all" />
+            <p class="font-bold text-sm">JavaScript (ES6+)</p>
+          </div>
+          <div class="group bg-gradient-to-br from-teal-400 to-teal-600 text-white p-6 rounded-xl shadow-lg transform transition-all duration-300 hover:shadow-2xl hover:scale-105 flex flex-col items-center justify-center text-center cursor-pointer">
+            <img src="/html.png" alt="HTML" class="h-16 w-16 mb-3 group-hover:drop-shadow-lg transition-all" />
+            <p class="font-bold text-sm">HTML5</p>
+          </div>
+          <div class="group bg-gradient-to-br from-pink-400 to-pink-600 text-white p-6 rounded-xl shadow-lg transform transition-all duration-300 hover:shadow-2xl hover:scale-105 flex flex-col items-center justify-center text-center cursor-pointer">
+            <img src="/css.png" alt="CSS" class="h-16 w-16 mb-3 group-hover:drop-shadow-lg transition-all" />
+            <p class="font-bold text-sm">CSS/SCSS</p>
+          </div>
+          <div class="group bg-gradient-to-br from-yellow-400 to-yellow-600 text-white p-6 rounded-xl shadow-lg transform transition-all duration-300 hover:shadow-2xl hover:scale-105 flex flex-col items-center justify-center text-center cursor-pointer">
+            <img src="/tailwind.png" alt="Tailwind CSS" class="h-16 w-16 mb-3 group-hover:drop-shadow-lg transition-all" />
+            <p class="font-bold text-sm">Tailwind CSS</p>
+          </div>
+        </div>
+      </div>
+
+      <div data-aos="fade-left">
+        <h3 class="text-3xl font-bold mb-6 text-purple-600">Frameworks & Tools</h3>
+        <div class="space-y-6">
+          <div class="bg-gray-50 p-6 rounded-xl">
+            <h4 class="text-xl font-semibold mb-3 text-gray-800">Frameworks & Libraries</h4>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">Angular Material</span>
+              <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-medium">Vuetify</span>
+              <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">Ant Design</span>
+              <span class="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-sm font-medium">Bootstrap</span>
+              <span class="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm font-medium">Firebase</span>
+            </div>
+          </div>
+
+          <div class="bg-gray-50 p-6 rounded-xl">
+            <h4 class="text-xl font-semibold mb-3 text-gray-800">Development Tools</h4>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 bg-red-100 text-red-700 rounded-full text-sm font-medium">Git</span>
+              <span class="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-sm font-medium">Browser Dev Tools</span>
+              <span class="px-3 py-1 bg-teal-100 text-teal-700 rounded-full text-sm font-medium">Agile Methodologies</span>
+              <span class="px-3 py-1 bg-pink-100 text-pink-700 rounded-full text-sm font-medium">Cursor AI</span>
+              <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">Chat GPT</span>
+            </div>
+          </div>
+
+          <div class="bg-gray-50 p-6 rounded-xl">
+            <h4 class="text-xl font-semibold mb-3 text-gray-800">Soft Skills</h4>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full text-sm font-medium">Communication</span>
+              <span class="px-3 py-1 bg-cyan-100 text-cyan-700 rounded-full text-sm font-medium">Teamwork</span>
+              <span class="px-3 py-1 bg-violet-100 text-violet-700 rounded-full text-sm font-medium">Leadership</span>
+              <span class="px-3 py-1 bg-rose-100 text-rose-700 rounded-full text-sm font-medium">Mentoring</span>
+              <span class="px-3 py-1 bg-amber-100 text-amber-700 rounded-full text-sm font-medium">Conflict Resolution</span>
+              <span class="px-3 py-1 bg-lime-100 text-lime-700 rounded-full text-sm font-medium">Prioritization</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<section id="open-source" class="p-10 mt-10 bg-gray-900 text-white">
-  <div class="mt-8">
-    <h3 class="text-2xl font-bold text-center text-white">
+<section id="open-source" class="py-20 px-4 bg-gradient-to-r from-purple-500 to-indigo-600 text-white">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-5xl font-bold text-center mb-16" data-aos="fade-up">
       Open Source Contributions
-    </h3>
-    <div class="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div class="p-4 bg-white rounded-lg shadow-lg">
-        <a href="https://shehrozkhannn.github.io/ng-chatlist/" target="_blank">
-          <p
-            class="flex text-lg font-semibold cursor-pointer text-gray-800 bg-gradient-to-r from-blue-500 to-purple-500 hover:text-transparent bg-clip-text"
-          >
-            Ng Chat List
-          </p>
-        </a>
-        <p class="mt-2 text-sm text-gray-800">
-          Contributed to a chat-based Angular application.
-        </p>
-      </div>
-
-      <div class="p-4 bg-white rounded-lg shadow-lg">
-        <a
-          href="https://ahsanayaz.github.io/ngx-device-detector/"
-          target="_blank"
-        >
-          <p
-            class="flex text-lg font-semibold cursor-pointer text-gray-800 bg-gradient-to-r from-blue-500 to-purple-500 hover:text-transparent bg-clip-text"
-          >
-            ngx-device-detector
-          </p>
-        </a>
-        <p class="mt-2 text-sm text-gray-800">
-          Contributed to an Angular library recognized by Google Developer
-          Experts.
-        </p>
-      </div>
-
-      <div class="p-4 bg-white rounded-lg shadow-lg">
-        <a
-          href="https://iomechs.github.io/angular-year-calendar/demo/"
-          target="_blank"
-        >
-          <p
-            class="flex text-lg font-semibold cursor-pointer text-gray-800 bg-gradient-to-r from-blue-500 to-purple-500 hover:text-transparent bg-clip-text"
-          >
-            Angular Year Calendar
-          </p>
-        </a>
-        <p class="mt-2 text-sm text-gray-800">
-          Contributed to an Angular Year Calendar library depends on "date-fns"
-          and "angular/cdk"
-        </p>
-      </div>
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <a
+        href="https://shehrozkhannn.github.io/ng-chatlist/"
+        target="_blank"
+        class="group p-8 bg-white/10 backdrop-blur-lg border border-white/30 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:bg-white/20 hover:border-white/50 transform hover:scale-105 hover:-translate-y-2"
+        data-aos="zoom-in"
+      >
+        <div class="flex items-center mb-4">
+          <i class="fas fa-cube text-2xl text-purple-200 mr-3"></i>
+          <h3 class="text-2xl font-bold">Ng Chat List</h3>
+        </div>
+        <p class="text-white/80 mb-4">Contributed to a chat-based Angular application with real-time messaging features.</p>
+        <span class="inline-flex items-center text-purple-200 group-hover:text-white transition-colors">
+          View Project <i class="fas fa-arrow-right ml-2"></i>
+        </span>
+      </a>
+      <a
+        href="https://ahsanayaz.github.io/ngx-device-detector/"
+        target="_blank"
+        class="group p-8 bg-white/10 backdrop-blur-lg border border-white/30 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:bg-white/20 hover:border-white/50 transform hover:scale-105 hover:-translate-y-2"
+        data-aos="zoom-in"
+        data-aos-delay="100"
+      >
+        <div class="flex items-center mb-4">
+          <i class="fas fa-cube text-2xl text-indigo-200 mr-3"></i>
+          <h3 class="text-2xl font-bold">ngx-device-detector</h3>
+        </div>
+        <p class="text-white/80 mb-4">Angular library recognized by Google Developer Experts for device detection.</p>
+        <span class="inline-flex items-center text-purple-200 group-hover:text-white transition-colors">
+          View Project <i class="fas fa-arrow-right ml-2"></i>
+        </span>
+      </a>
+      <a
+        href="https://iomechs.github.io/angular-year-calendar/demo/"
+        target="_blank"
+        class="group p-8 bg-white/10 backdrop-blur-lg border border-white/30 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:bg-white/20 hover:border-white/50 transform hover:scale-105 hover:-translate-y-2"
+        data-aos="zoom-in"
+        data-aos-delay="200"
+      >
+        <div class="flex items-center mb-4">
+          <i class="fas fa-cube text-2xl text-blue-200 mr-3"></i>
+          <h3 class="text-2xl font-bold">Angular Year Calendar</h3>
+        </div>
+        <p class="text-white/80 mb-4">Angular Year Calendar library with date-fns and CDK integration.</p>
+        <span class="inline-flex items-center text-purple-200 group-hover:text-white transition-colors">
+          View Project <i class="fas fa-arrow-right ml-2"></i>
+        </span>
+      </a>
+      <a
+        href="https://hacktoberfest.com/"
+        target="_blank"
+        class="group p-8 bg-white/10 backdrop-blur-lg border border-white/30 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:bg-white/20 hover:border-white/50 transform hover:scale-105 hover:-translate-y-2"
+        data-aos="zoom-in"
+        data-aos-delay="300"
+      >
+        <div class="flex items-center mb-4">
+          <i class="fas fa-code-branch text-2xl text-green-200 mr-3"></i>
+          <h3 class="text-2xl font-bold">Hacktoberfest</h3>
+        </div>
+        <p class="text-white/80 mb-4">Active contributor to open-source projects through Hacktoberfest (2019-2024), promoting collaboration and community-driven development.</p>
+        <span class="inline-flex items-center text-purple-200 group-hover:text-white transition-colors">
+          Learn More <i class="fas fa-arrow-right ml-2"></i>
+        </span>
+      </a>
     </div>
   </div>
 </section>
 <!-- Experience Section -->
-<section id="experience" class="p-10 bg-gray-900 text-white">
-  <h2 class="text-4xl font-bold text-center mb-6">Professional Experience</h2>
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-    <!-- Experience 1 -->
-    <div class="p-6 bg-gray-800 rounded-lg shadow-lg">
-      <h3 class="text-2xl font-semibold">Software Engineer - Angular</h3>
-      <p class="mt-2 text-sm text-gray-400">
-        Cluster Valley | Nov 2021 - Nov-2024
-      </p>
-      <ul class="list-disc mt-4 pl-5 space-y-2 text-sm">
-        <li>
-          Led a team of two junior Angular developers, providing mentorship and
-          ensuring project milestones were met.
-        </li>
-        <li>
-          Designed and developed scalable frontend applications using Angular,
-          ensuring responsive and user-friendly interfaces.
-        </li>
-        <li>
-          Collaborated with cross-functional teams to deliver projects on time
-          and within scope.
-        </li>
-        <li>
-          Implemented coding best practices, conducted code reviews, and
-          optimized application performance.
-        </li>
-        <li>
-          Participated in Agile ceremonies, including sprint planning and daily
-          stand-ups.
-        </li>
-        <li>
-          Integrated frontend applications with RESTful APIs and backend
-          services.
-        </li>
-      </ul>
+<section id="experience" class="py-20 px-4 bg-gradient-to-b from-gray-50 to-white text-gray-800">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16" data-aos="fade-up">
+      <h2 class="text-5xl font-bold mb-4 text-blue-600">Professional Experience</h2>
+      <p class="text-lg text-gray-600">My journey in software development and engineering</p>
     </div>
-
-    <!-- Experience 2 -->
-    <div class="p-6 bg-gray-800 rounded-lg shadow-lg">
-      <h3 class="text-2xl font-semibold">Associate Software Engineer</h3>
-      <p class="mt-2 text-sm text-gray-400">Iomechs | 2019 - 2021</p>
-      <ul class="list-disc mt-4 pl-5 space-y-2 text-sm">
-        <li>
-          Developed frontend components and features for large-scale
-          applications using Angular.
-        </li>
-        <li>
-          Collaborated with UX/UI designers and backend developers to deliver
-          integrated solutions.
-        </li>
-        <li>
-          Implemented responsive design principles to ensure mobile-friendly and
-          accessible applications.
-        </li>
-        <li>
-          Resolved technical issues and optimized performance through debugging
-          and efficient coding practices.
-        </li>
-        <li>
-          Worked with React.js on certain projects, showcasing flexibility in
-          frontend technologies.
-        </li>
-      </ul>
+    <div class="space-y-8">
+      <div
+        class="relative pl-8 border-l-4 border-purple-500"
+        data-aos="fade-right"
+      >
+        <div class="absolute w-4 h-4 bg-purple-500 rounded-full top-0 left-0 transform -translate-x-2.5 -translate-y-0.5 shadow-lg"></div>
+        <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-all duration-300">
+          <div class="flex items-start justify-between">
+            <div>
+              <h3 class="text-3xl font-bold text-purple-600 mb-2">Frontend Developer</h3>
+              <p class="text-lg text-gray-600 flex items-center gap-2">
+                <i class="fas fa-building text-purple-500"></i>
+                Centricdxb
+              </p>
+              <p class="text-sm text-gray-500 flex items-center gap-2 mt-1">
+                <i class="fas fa-calendar text-purple-500"></i>
+                June 2025 - Present
+              </p>
+            </div>
+            <span class="px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-semibold">Current</span>
+          </div>
+          <ul class="list-disc mt-6 pl-6 space-y-2 text-gray-700">
+            <li>Developed and maintained scalable web applications using Angular and React, ensuring high performance and cross-browser compatibility</li>
+            <li>Implemented modern UI components with Ant Design (React), improving usability and overall user experience</li>
+            <li>Customized and optimized front-end templates in Pimcore (Twig language) for dynamic content management solutions</li>
+            <li>Collaborated with cross-functional teams (designers, backend developers, QA) to deliver high-quality, client-focused solutions on time</li>
+          </ul>
+        </div>
+      </div>
+      <div
+        class="relative pl-8 border-l-4 border-indigo-500"
+        data-aos="fade-right"
+        data-aos-delay="50"
+      >
+        <div class="absolute w-4 h-4 bg-indigo-500 rounded-full top-0 left-0 transform -translate-x-2.5 -translate-y-0.5 shadow-lg"></div>
+        <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-all duration-300">
+          <div class="flex items-start justify-between">
+            <div>
+              <h3 class="text-3xl font-bold text-indigo-600 mb-2">Frontend Developer</h3>
+              <p class="text-lg text-gray-600 flex items-center gap-2">
+                <i class="fas fa-building text-indigo-500"></i>
+                NexTech Solutions
+              </p>
+              <p class="text-sm text-gray-500 flex items-center gap-2 mt-1">
+                <i class="fas fa-calendar text-indigo-500"></i>
+                April 2025 - May 2025
+              </p>
+            </div>
+            <span class="px-4 py-2 bg-indigo-100 text-indigo-700 rounded-full text-sm font-semibold">2 months</span>
+          </div>
+          <ul class="list-disc mt-6 pl-6 space-y-2 text-gray-700">
+            <li>Developed and customized websites using WordPress, implementing themes and plugins as per client requirements</li>
+            <li>Built responsive layouts with HTML, CSS, and JavaScript, ensuring cross-browser compatibility and smooth user experience</li>
+          </ul>
+        </div>
+      </div>
+      <div
+        class="relative pl-8 border-l-4 border-pink-500"
+        data-aos="fade-right"
+        data-aos-delay="75"
+      >
+        <div class="absolute w-4 h-4 bg-pink-500 rounded-full top-0 left-0 transform -translate-x-2.5 -translate-y-0.5 shadow-lg"></div>
+        <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-all duration-300">
+          <div class="flex items-start justify-between">
+            <div>
+              <h3 class="text-3xl font-bold text-pink-600 mb-2">Freelance Frontend Developer</h3>
+              <p class="text-lg text-gray-600 flex items-center gap-2">
+                <i class="fas fa-building text-pink-500"></i>
+                OnlineCVrocks (Client: Tobias Trusch)
+              </p>
+              <p class="text-sm text-gray-500 flex items-center gap-2 mt-1">
+                <i class="fas fa-calendar text-pink-500"></i>
+                Jan 2025 - March 2025
+              </p>
+            </div>
+            <span class="px-4 py-2 bg-pink-100 text-pink-700 rounded-full text-sm font-semibold">3 months</span>
+          </div>
+          <ul class="list-disc mt-6 pl-6 space-y-2 text-gray-700">
+            <li>Built responsive web application using Vue.js and Vuetify, ensuring a modern and user-friendly interface</li>
+            <li>Integrated Firebase Realtime Database to manage dynamic data updates efficiently</li>
+            <li>Implemented Google and LinkedIn Authentication using Firebase Authentication for secure and seamless user login</li>
+            <li>Collaborated directly with the client to gather requirements, deliver features, and ensure project success</li>
+          </ul>
+        </div>
+      </div>
+      <div
+        class="relative pl-8 border-l-4 border-blue-500"
+        data-aos="fade-right"
+        data-aos-delay="100"
+      >
+        <div class="absolute w-4 h-4 bg-blue-500 rounded-full top-0 left-0 transform -translate-x-2.5 -translate-y-0.5 shadow-lg"></div>
+        <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-all duration-300">
+          <div class="flex items-start justify-between">
+            <div>
+              <h3 class="text-3xl font-bold text-blue-600 mb-2">Software Engineer</h3>
+              <p class="text-lg text-gray-600 flex items-center gap-2">
+                <i class="fas fa-building text-blue-500"></i>
+                Cluster Valley
+              </p>
+              <p class="text-sm text-gray-500 flex items-center gap-2 mt-1">
+                <i class="fas fa-calendar text-blue-500"></i>
+                Sept 2021 - Nov 2024
+              </p>
+            </div>
+            <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold">3 years 3 months</span>
+          </div>
+          <ul class="list-disc mt-6 pl-6 space-y-2 text-gray-700">
+            <li>Lead a team of two junior Angular developers, providing mentorship to achieve project milestones and maintain quality standards</li>
+            <li>Design and develop scalable frontend applications using the Angular framework, ensuring responsive and user-friendly interfaces</li>
+            <li>Collaborated with cross-functional teams to deliver projects on time and within scope</li>
+            <li>Implement best practices and coding standards, conduct code reviews, and optimize application performance</li>
+            <li>Participate in Agile ceremonies including sprint planning, daily stand-ups, sprint reviews</li>
+            <li>Implemented RESTful APIs and integrated frontend with backend services</li>
+          </ul>
+        </div>
+      </div>
+      <div
+        class="relative pl-8 border-l-4 border-green-500"
+        data-aos="fade-right"
+        data-aos-delay="100"
+      >
+        <div class="absolute w-4 h-4 bg-green-500 rounded-full top-0 left-0 transform -translate-x-2.5 -translate-y-0.5 shadow-lg"></div>
+        <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-all duration-300">
+          <div class="flex items-start justify-between">
+            <div>
+              <h3 class="text-3xl font-bold text-green-600 mb-2">Associate Software Engineer</h3>
+              <p class="text-lg text-gray-600 flex items-center gap-2">
+                <i class="fas fa-building text-green-500"></i>
+                Iomechs
+              </p>
+              <p class="text-sm text-gray-500 flex items-center gap-2 mt-1">
+                <i class="fas fa-calendar text-green-500"></i>
+                April 2019 - July 2021
+              </p>
+            </div>
+            <span class="px-4 py-2 bg-green-100 text-green-700 rounded-full text-sm font-semibold">2 years 4 months</span>
+          </div>
+          <ul class="list-disc mt-6 pl-6 space-y-2 text-gray-700">
+            <li>Developed frontend components and features for large-scale applications primarily using Angular</li>
+            <li>Collaborated with UX/UI designers and backend developers to deliver integrated solutions</li>
+            <li>Implemented responsive design principles to ensure applications are mobile-friendly and accessible</li>
+            <li>Resolved technical issues and optimized application performance through efficient coding practices and debugging techniques</li>
+            <li>Utilized React.js for certain projects, demonstrating flexibility and proficiency across different frontend technologies</li>
+            <li>Utilized debugging tools to enhance the quality of delivered products</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- Additional Experiences -->
+<!-- Education Section -->
+<section id="education" class="py-20 px-4 bg-white text-gray-900">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16" data-aos="fade-up">
+      <h2 class="text-5xl font-bold mb-4 text-indigo-600">Education</h2>
+      <p class="text-lg text-gray-600">My educational background and qualifications</p>
+    </div>
+
+    <div class="max-w-4xl mx-auto">
+      <div class="bg-gradient-to-br from-indigo-50 to-white border border-gray-200 rounded-3xl p-8 shadow-lg" data-aos="fade-up">
+        <div class="flex items-center justify-between mb-6">
+          <div>
+            <h3 class="text-3xl font-bold text-gray-900">Advanced Diploma in Software Engineering</h3>
+            <p class="text-lg text-gray-600 mt-2">Aptech Learning, Shahrah-e-Faisal Centre</p>
+          </div>
+          <span class="px-4 py-2 bg-indigo-100 text-indigo-700 rounded-full text-sm font-semibold">2015 - 2018</span>
+        </div>
+        <ul class="space-y-3 text-gray-700 list-disc list-inside">
+          <li>Comprehensive training in software development fundamentals and programming concepts</li>
+          <li>Covered multiple programming languages, database management, and software engineering principles</li>
+          <li>Hands-on projects and practical assignments to build real-world development skills</li>
+          <li>Foundation for modern web development technologies and frameworks</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- Contact Section -->
-<section id="contact" class="p-10 bg-gray-900 text-white">
-  <h2 class="text-4xl font-bold text-center mb-6">Contact</h2>
-  <div class="text-center text-lg">
-    <p>
-      If you'd like to get in touch, feel free to reach out via email or connect
-      with me on LinkedIn.
+<section id="contact" class="py-20 px-4 bg-gradient-to-r from-green-400 via-emerald-500 to-green-600 text-white relative overflow-hidden">
+  <!-- Background Pattern -->
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+  </div>
+  
+  <div class="max-w-4xl mx-auto relative z-10 text-center">
+    <h2 class="text-5xl font-bold mb-6" data-aos="fade-up">Let's Work Together</h2>
+    <p class="text-xl text-white/90 mb-12" data-aos="fade-up" data-aos-delay="100">
+      I'm always interested in hearing about new projects and opportunities. If you'd like to get in touch, feel free to reach out!
     </p>
+    <div class="flex flex-col sm:flex-row gap-6 justify-center" data-aos="fade-up" data-aos-delay="200">
+      <a
+        href="mailto:mohsin.ayaz.dev@gmail.com"
+        class="inline-flex items-center justify-center px-8 py-4 bg-white text-green-600 font-bold rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+      >
+        <i class="fas fa-envelope mr-2"></i>
+        Send Email
+      </a>
+      <a
+        href="https://www.linkedin.com/in/mohsinayaz/"
+        target="_blank"
+        class="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-bold rounded-full hover:bg-white/10 transform hover:scale-105 transition-all duration-300"
+      >
+        <i class="fab fa-linkedin mr-2"></i>
+        Connect on LinkedIn
+      </a>
+      <a
+        href="https://github.com/mohsinayaz"
+        target="_blank"
+        class="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-bold rounded-full hover:bg-white/10 transform hover:scale-105 transition-all duration-300"
+      >
+        <i class="fab fa-github mr-2"></i>
+        View GitHub
+      </a>
+    </div>
   </div>
 </section>
 
 <!-- Footer Section -->
-<footer class="bg-gray-900 text-white py-6">
-  <div class="container mx-auto text-center">
-    <p>&copy; 2025 Mohsin Ayaz. All Rights Reserved.</p>
-    <div class="mt-4">
-      <a
-        href="https://github.com/mohsinayaz"
-        target="_blank"
-        class="text-indigo-400 hover:text-indigo-500 mx-2"
-        >GitHub</a
-      >
-      <a
-        href="https://www.linkedin.com/in/mohsinayaz/"
-        target="_blank"
-        class="text-indigo-400 hover:text-indigo-500 mx-2"
-        >LinkedIn</a
-      >
-      <a
-        href="mailto:mohxn.ayaaz@gmail.com"
-        class="text-indigo-400 hover:text-indigo-500 mx-2"
-        >Email</a
-      >
+<footer class="bg-gray-900 text-white py-12 border-t border-gray-800">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+      <div>
+        <h3 class="text-2xl font-bold mb-4 bg-gradient-to-r from-orange-500 to-pink-500 text-transparent bg-clip-text">Mohsin Ayaz</h3>
+        <p class="text-gray-400">Frontend Engineer dedicated to building beautiful and functional web applications.</p>
+      </div>
+      <div>
+        <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+        <ul class="space-y-2 text-gray-400">
+          <li><a href="#about" class="hover:text-blue-400 transition-colors">About</a></li>
+          <li><a href="#projects" class="hover:text-blue-400 transition-colors">Projects</a></li>
+          <li><a href="#experience" class="hover:text-blue-400 transition-colors">Experience</a></li>
+          <li><a href="#education" class="hover:text-blue-400 transition-colors">Education</a></li>
+          <li><a href="#contact" class="hover:text-blue-400 transition-colors">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-lg font-semibold mb-4">Connect</h4>
+        <div class="flex gap-4">
+          <a
+            href="https://github.com/mohsinayaz"
+            target="_blank"
+            class="text-gray-400 hover:text-blue-400 transition-colors text-xl"
+            title="GitHub"
+          >
+            <i class="fab fa-github"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/mohsinayaz/"
+            target="_blank"
+            class="text-gray-400 hover:text-blue-400 transition-colors text-xl"
+            title="LinkedIn"
+          >
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a
+            href="mailto:mohsin.ayaz.dev@gmail.com"
+            class="text-gray-400 hover:text-green-400 transition-colors text-xl"
+            title="Email"
+          >
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-gray-800 pt-8 text-center text-gray-500">
+      <p>&copy; 2025 Mohsin Ayaz. All Rights Reserved.</p>
+      <p class="text-sm mt-2">Designed & Built with <span class="text-red-500">♥</span> using Angular & Tailwind CSS</p>
     </div>
   </div>
 </footer>
