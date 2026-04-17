@@ -9,6 +9,11 @@
   animation: blink 1s infinite;
 }
 
+:host {
+  overflow-x: hidden;
+  display: block;
+}
+
 @keyframes blink {
   50% {
     opacity: 0;
