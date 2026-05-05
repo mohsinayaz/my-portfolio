@@ -1,7 +1,7 @@
 ﻿
 <!-- Header Section -->
 <header
-  class="w-full overflow-x-hidden py-5 fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-xl shadow-lg border-b border-gray-200/50"
+  class="w-full py-5 fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-xl shadow-lg border-b border-gray-200/50"
 >
   <div class="container mx-auto flex justify-between items-center px-6 max-w-7xl">
     <!-- Logo and Name -->
@@ -11,7 +11,6 @@
     >
       <div class="relative">
         <img src="/logo.png" width="48" height="48" class="mr-4 drop-shadow-sm group-hover:drop-shadow-md transition-all duration-300" />
-        <div class="absolute inset-0 bg-gradient-to-r from-orange-400 to-pink-400 rounded-full opacity-20 group-hover:opacity-30 transition-opacity duration-300"></div>
       </div>
       <div>
         <h1 class="text-3xl font-bold bg-gradient-to-r from-orange-500 via-pink-500 to-red-500 text-transparent bg-clip-text group-hover:from-orange-600 group-hover:via-pink-600 group-hover:to-red-600 transition-all duration-300">
@@ -218,18 +217,25 @@
 <!-- Hero Section -->
 <section
   id="main"
-  class="relative overflow-x-hidden w-full bg-[#0f1731] text-white flex items-start justify-center pt-28 pb-20 sm:pt-32 sm:pb-24"
+  class="relative w-full bg-[#0f1731] text-white flex items-start justify-center pt-28 pb-20 sm:pt-32 sm:pb-24"
 >
   <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(108,99,255,0.24),_transparent_18%),radial-gradient(circle_at_bottom_right,_rgba(255,77,126,0.22),_transparent_16%)] pointer-events-none"></div>
   <div class="absolute inset-0 bg-[linear-gradient(135deg,_rgba(33,37,74,0.88),_rgba(18,24,57,0.92)_55%,_rgba(255,93,139,0.08))]"></div>
   <div class="absolute inset-0 bg-[radial-gradient(circle,_rgba(255,255,255,0.04),_transparent_35%)]"></div>
 
-  <div class="relative z-10 max-w-6xl mx-auto py-12 px-4 sm:px-6 w-full">
+  <div class="relative z-10 max-w-6xl mx-auto py-12 px-4 sm:px-6 sm:py-6 w-full">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-start">
       <div class="flex flex-col justify-center text-center lg:text-left">
         <div class="inline-flex items-center justify-center lg:justify-start gap-3 rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-xs sm:text-sm text-white/80 tracking-[0.35em] mb-4 sm:mb-6 backdrop-blur-sm">
           <span class="h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-[#ff4d7e] shadow-[0_0_16px_rgba(255,77,126,0.5)]"></span>
           Senior Software Engineer
+        </div>
+        <div class="lg:hidden mb-6 mt-4 rounded-[24px] sm:rounded-[34px] overflow-hidden border border-white/15 bg-white/5">
+          <img
+                src="/picture4.png"
+                alt="Mohsin Ayaz"
+                class="h-[420px] w-full object-cover"
+              />
         </div>
         <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-[-0.04em] max-w-3xl mx-auto lg:mx-0" data-aos="fade-up">
           Crafting premium digital products<br />with speed, polish, and impact.
@@ -237,16 +243,16 @@
         <p class="mt-4 sm:mt-6 md:mt-8 text-base sm:text-lg md:text-xl text-white/80 max-w-2xl mx-auto lg:mx-0" data-aos="fade-up" data-aos-delay="100">
           I build polished front-end experiences with Angular, React, Vue, and modern design systems that help brands stand out online.
         </p>
-        <div class="mt-6 sm:mt-8 md:mt-10 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="mt-6 sm:mt-12 md:mt-10 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4" data-aos="fade-up" data-aos-delay="200">
           <button
-            class="inline-flex items-center justify-center rounded-full bg-white text-[#ff4d7e] font-semibold px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base shadow-[0_24px_70px_rgba(255,77,126,0.18)] hover:scale-[1.02] transition-transform duration-300 w-full sm:w-auto"
+            class="sm:mt-10 inline-flex items-center justify-center rounded-full bg-white text-[#ff4d7e] font-semibold px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base shadow-[0_24px_70px_rgba(255,77,126,0.18)] hover:scale-[1.02] transition-transform duration-300 w-full sm:w-auto"
             (click)="downloadResume()"
           >
             Download Resume
           </button>
           <a
             href="#projects"
-            class="inline-flex items-center justify-center rounded-full border border-white/80 bg-white/10 text-white font-semibold px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base hover:bg-white/20 transition-all duration-300 w-full sm:w-auto"
+            class="sm:mt-10 inline-flex items-center justify-center rounded-full border border-white/80 bg-white/10 text-white font-semibold px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base hover:bg-white/20 transition-all duration-300 w-full sm:w-auto"
             (click)="scrollToSection($event, 'projects')"
           >
             View My Work
